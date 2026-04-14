@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <!-- 表格标签 -->
+  <table border="2" cellspacing="0" cellpadding="10" align="center" width="500" height="300" bgcolor="yellow">
+    <!-- cellspacing的作用是添加表格的单元格之间的间距 -->
+    <!-- cellpadding的作用是添加表格的单元格之间的间距 -->
+    <!-- align的作用是添加表格的居中 -->
+    <!-- width的作用是添加表格的宽度 -->
+    <!-- height的作用是添加表格的高度 -->
+    <!-- bgcolor的作用是添加表格的背景颜色 -->
+    <!-- Border的作用是添加表格的边框，值可以是数字也可以是颜色 -->
+    <tr>
+      <th>姓名</th>
+      <th>年龄</th>
+      <th>性别</th>
+    </tr>
+    <!-- Tr的作用是添加表格的行，全称table row -->
+    <!-- th的作用是添加表格的列，全称table header，会居中，加粗 -->
+    <tr>
+      <td>猪爸爸</td>
+      <td>18</td>
+      <td>男</td>
+      <!-- td的作用是添加表格称table data -->
+    </tr>
+    <tr>
+      <td>猪妈妈</td>
+      <td>18</td>
+      <td>女</td>
+    </tr>
+    <tr>
+      <td>猪儿子</td>
+      <td>18</td>
+      <td>男</td>
+    </tr>
+    <tr>
+      <td>猪女儿</td>
+      <td>18</td>
+      <td>女</td>
+    </tr>
+
+  </table>
+  <!-- 表格结构标签 -->
+  <h2>表格结构标签</h2>
+  <table border="2">
+    <!-- thead的作用是添加表格的表头 -->
+    <thead>
+      <tr>
+        <th>姓名</th>
+        <th>年龄</th>
+        <th>性别</th>
+      </tr>
+    </thead>
+    <!-- tbody的作用是添加表格的主体 -->
+    <tbody>
+      <tr>
+        <td>猪爸爸</td>
+        <td rowspan="2">18</td>
+        <td>男</td>
+      </tr>
+      <tr>
+        <td>猪妈妈</td>
+
+        <td>女</td>
+    </tbody>
+    <!--tfoot的作用是添加表格的页脚 -->
+    <tfoot>
+      <tr>
+        <td>平均</td>
+        <td>18</td>
+        <td>中</td>
+      </tr>
+    </tfoot>
+
+
+
+</body>
+
+</html>
