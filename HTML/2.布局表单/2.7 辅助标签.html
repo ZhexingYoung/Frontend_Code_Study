@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <ul>
+    <!-- lable方式1 -->
+    <li>
+      <label for="male">男</label>
+      <!-- lable的作用是添加标签，用于添加标签，以及在鼠标悬停时显示。 lable通过和for属性配合使用，for属性用于绑定label和input，使得点击label时，input会获得焦点。-->
+
+      <input type="radio" id="male" name="gender">
+      <label for="female">女</label>
+      <input type="radio" id="female" name="gender">
+    </li>
+    <!-- lable方式2 -->
+    <li>
+      <label>
+        <input type="checkbox" name="hobby" value="football" checked>
+        足球
+      </label>
+      <label>
+        <input type="checkbox" name="hobby" value="basketball">
+        篮球
+      </label>
+    </li>
+
+    <li>
+      <label>
+        账号<input type="text" name="username" placeholder="请输入您的账户" id="username">
+      </label>
+    </li>
+
+    <li>
+      <label>
+        留言板
+        <textarea name="textarea" placeholder="请输入您的内容" id="textarea" cols="30" rows="10"></textarea>
+      </label>
+    </li>
+  </ul>
+</body>
+
+</html>

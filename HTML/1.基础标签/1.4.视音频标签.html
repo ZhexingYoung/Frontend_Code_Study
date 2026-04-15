@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <!-- 音频板块 -->
+  <h2>音频板块</h2>
+  <audio src="Media/ldh.mp3" controls muted autoplay loop></audio>
+  <!-- controls属性是音频的控制按钮，用于控制音频的播放，暂停，停止，以及音量。 -->
+  <!-- muted属性是音频的静音按钮，用于静音音频。 -->
+  <!-- autoplay属性是音频的自动播放按钮，用于自动播放音频。 -->
+  <!-- loop属性是音频的循环播放按钮，用于循环播放音频。 -->
+  <!-- 音频兼容性写法 -->
+  <audio>
+    <source src="Media/ldh.mp3" type="audio/mp3" controls muted autoplay loop>
+    <p>您的浏览器不支持 audio 标签。</p>
+    <!-- 音频兼容性写法：用于在浏览器不支持音频标签时显示提示信息。 -->
+  </audio>
+
+
+  <!-- 视频板块 -->
+  <h2>视频格式</h2>
+  <video src="Media/yu7.mp4" width="800" controls loop></video>
+  <video src="Media/yu7.mp4" poster="Media/yu7.jpg" width="300" controls autoplay muted></video>
+  <!-- poster属性是视频的封面图片，用于在视频无法显示时显示。 -->
+  <!-- controls属性是视频的控制按钮，用于控制视频的播放，暂停，停止，以及音量。 -->
+  <!-- autoplay属性是视频的自动播放按钮，用于自动播放视频。 -->
+  <!-- muted属性是视频的静音按钮，用于静音视频。 -->
+  <!-- loop属性是视频的循环播放按钮，用于循环播放视频。 -->
+  <!--视频兼容性写法 -->
+  <video poster="Media/yu7.jpg" width="600" controls loop>
+    <source src="Media/yu7.mp4" type="video/mp4">
+    <p>您的浏览器不支持 video 标签。</p>
+  </video>
+
+
+</body>
+
+</html>

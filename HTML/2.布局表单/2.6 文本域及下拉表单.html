@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <h2>文本域</h2>
+  <ul>
+    <li>留言板：</li>
+    <textarea name="textarea" placeholder="请输入您的内容" id="textarea" cols="30" rows="10"></textarea>
+    <!-- textarea的属性：
+  name：文本域的名称
+  placeholder：文本域的提示文字
+  id：文本域的唯一标识
+  cols：文本域的列数
+  rows：文本域的行数
+  -->
+  </ul>
+
+  <h2>下拉表单</h2>
+  <ul>
+    <li>选择城市：</li>
+    <select name="city" id="city">
+      <option value="1">北京</option>
+      <option value="2" selected>上海</option>
+      <option value="3">广州</option>
+      <option value="4">深圳</option>
+      <option value="5">成都</option>
+      <option value="6">重庆</option>
+    </select>
+    <!-- select的属性：
+  name：下拉表单的名称
+  id：下拉表单的唯一标识
+  -->
+    <li>
+      <h2>按钮模块</h2>
+      <button type="submit" disabled>提交</button>
+      <!-- disabled的作用是添加禁用状态，点击提交后不会提交，type=submit是提交按钮，type=reset是重置按钮，type=button是普通按钮 -->
+    </li>
+  </ul>
+
+</body>
+
+</html>

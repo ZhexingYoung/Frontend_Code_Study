@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>锚点链接</title>
+  <!-- 这里复制代码  让页面实现滑动效果 -->
+  <style>
+    html {
+      scroll-behavior: smooth;
+      background-color: #f0f0f0db;
+      font-size: 16px;
+      color: #1c1c1c;
+    }
+  </style>
+  <!-- style的作用是设置网页的样式，以及在浏览器中显示。，这里的scroll-behavior: smooth;用于设置网页的滚动行为，使其平滑滚动，还有其他的常用属性，如background-color: red;用于设置背景颜色，font-size: 16px;用于设置字体大小，等等。 -->
+  <!-- 总结一下常用的style属性：
+    background-color: red;用于设置背景颜色
+    font-size: 16px;用于设置字体大小
+    font-weight: bold;用于设置字体加粗
+    font-style: italic;用于设置字体斜体
+    font-family: Arial, sans-serif;用于设置字体
+    text-align: center;用于设置文字对齐方式
+    text-decoration: underline;用于设置文字下划线
+    text-decoration: line-through;用于设置文字删除线
+    color: red;用于设置文字颜色
+    border: 1px solid red;用于设置边框
+    border-radius: 10px;用于设置圆角
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);用于设置阴影
+    opacity: 0.5;用于设置透明度
+    transition: all 0.3s ease;用于设置过渡效果
+    transform: scale(1.1);用于设置缩放效果
+    transform: rotate(10deg);用于设置旋转效果
+    transform: translate(10px, 10px);用于设置位移效果
+    transform: skew(10deg, 10deg);用于设置倾斜效果
+    transform: matrix(1, 0, 0, 1, 0, 0);用于设置矩阵效果
+    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);用于设置3D矩阵效果
+    transform: perspective(100px);用于设置透视效果
+    transform: perspective(100px) rotateX(10deg);用于设置透视旋转效果
+</head>
+
+<body>
+  <h1>什么是超级链接？</h1>
+  <p>超链接是互联网提供的最令人兴奋的创新之一，它们从一开始就一直是互联网的一个特性，使互联网成为互联的网络。</p>
+  超链接主要包含：
+  <!-- br是强制换行标签 单标签 -->
+  <p>
+    <a href="#1">1. 内部链接 <br>
+      <a href="#2"> 2. 外部链接</a> <br>
+      <a href="#3">3. 空链接</a> <br>
+      <a href="#4">4. 下载链接</a> <br>
+      <a href="#5">5. 邮件链接</a> <br>
+      <!-- href属性是超链接的链接地址，用于设置超链接的链接地址，#1表示锚点链接，点击会跳转到id为1的元素。 -->
+      <h2 id="1">1. 内部链接</h2>
+      <!-- id属性是元素的唯一标识符，用于设置元素的唯一标识符。 -->
+      <p>
+        超链接使我们能够将我们的文档链接到任何其他文档（或其他资源），也可以链接到文档的指定部分，我们可以在一个简单的网址上提供应用程序。几乎任何网络内容都可以转换为链接，点击（或激活）超链接将使网络浏览器转到另一个网址（URL）。
+      </p>
+      例如：
+      <a href="./4.视音频标签.html">音视频</a>
+      如果有需要作为链接的图片，使用 a元素来包裹要引用图片的 img 元素。下面的示例使用相对路径来引用本地存储的 SVG 图像文件。
+
+      <h2 id="2">2. 外部链接</h2>
+
+      例如：
+      <a href="https://www.deepseek.com/" title="deepseek" target="_blank">deepseek</a>
+      你可能要添加到你的链接的另一个属性是 title。这旨在包含关于链接的补充信息，例如页面包含什么样的信息或需要注意的事情。
+
+      <h2 id="3">3. 空连接 </h2>
+
+      <p>在 HTML 中，空连接（Empty Link）通常指的是没有指定 href 属性或 href 属性值为空的 a标签。
+        空连接的 href 属性值为空字符串（""）或 # 字符。</p>
+      例如：
+      <a href="">点击跳转到顶部</a>
+      <!-- 当点击空链接时，会跳转到当前页面的顶部。 -->
+      <p>空链接点击默认会跳到当前页面的顶部。</p>
+      <p>空连接的作用是为了提供一个占位符，用于在页面的特定位置创建一个目标，以便其他链接或脚本可以跳转到该位置。这在页面布局中非常有用，尤其是当你需要在页面的不同部分之间创建导航链接时。</p>
+
+      <h2 id="4">4. 下载链接 </h2>
+
+      <a href="./猪爸爸.png">下载软件</a>
+      <p>下载链接是一种特殊类型的链接，用于将文件从服务器下载到用户的计算机上。当用户点击下载链接时，它会触发浏览器的下载功能，将文件保存到用户的本地存储中，而不是直接在浏览器中显示文件内容。</p>
+      <p>下载链接通常用于提供软件、文档、图片或视频等可下载资源，以便用户可以离线使用或分享给他人。</p>
+
+      <h2 id="5">5. 邮件链接 </h2>
+
+      <p>当点击一个链接或按钮时，可能会开启新的邮件的发送而不是连接到一个资源或页面。这种场景可以使用 <a> 元素和 mailto: URL 协议实现。</p>
+
+      <p> 其最基本和最常用的使用形式为一个指明收件人电子邮件地址的 mailto: 链接。例如：</p>
+      <a href="mailto:123@qq.com">联系我们</a>
+
+      </body>
+
+</html>

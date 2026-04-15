@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <h2>单选复选</h2>
+  <form action="">
+    <ol>
+      <li>
+        账号：<input type="textarea" placeholder="请输入账户" name="username" maxlength="10" accesskey="u" autocomplete="off">
+      </li>
+      <li>
+        密码：<input type="password" placeholder="请输入密码" name="password" maxlength="8" accesskey="p" autocomplete="off">
+      </li>
+      <li>
+        <input type="radio" name="gender" value="1" checked>男
+        <!-- radio是单选框，checked的作用是添加默认选中,name是单选框的名称,value是单选框的值 -->
+      </li>
+      <li>
+        <input type="radio" name="gender" value="0">女
+      </li>
+    </ol>
+    <button type="submit">登陆</button>
+    <button type="reset">重置</button>
+  </form>
+  <br>
+
+  <h2>复选复选框板块</h2>
+  <form action="">
+    <ul>
+      <li>
+        <input type="checkbox" name="hobby" value="1" checked="on">足球
+      </li>
+      <li>
+        <input type="checkbox" name="hobby" value="2" unchecked="on">篮球
+      </li>
+      <!-- checked的作用是添加默认选中,name是复选框的名称,value是复选框的值并且唯一 -->
+      <li>
+        <input type="checkbox" name="hobby" value="3" unchecked="on"> 乒乓球
+      </li>
+    </ul>
+  </form>
+  <hr>
+
+  <h2>游戏登录板块</h2>
+  <form action="">
+    <ul>
+      <li>账号：<input type="textarea" placeholder="请输入您的账户" name="username" maxlength="10" accesskey="u"
+          autocomplete="off"></li>
+      <li>密码：<input type="password" placeholder="请输入您的密码" name="password" maxlength="8" accesskey="p"
+          autocomplete="off"></li>
+    </ul>
+    <li>
+      <input type="radio" name="game" value="1" checked>四川一区
+    </li>
+    <li>
+      <input type="radio" name="game" value="2">四川二区
+    </li>
+    <li>
+      <input type="radio" name="game" value="3">四川三区
+    </li>
+
+    <ol>
+      <li>
+        <input type="checkbox" name="function" value="1" checked>加速功能开启
+        <!-- checked的作用是添加默认选中,name是复选框的名称，一个name只能选择一个,value是复选框的值，点击提交后会送到后台 -->
+      </li>
+      <li>
+        <input type="checkbox" name="function" value="2" unchecked>语言功能开启
+      </li>
+      <li>
+        <input type="checkbox" name="function" value="3" unchecked>视频功能开启
+      </li>
+    </ol>
+    头像：<input type="file" name="avatar" multiple accept=".exe.jpg.png.gif.bmp.tiff.webp.svg.ico">
+    <!-- type="file"
+作用：把输入框变成 选择本地文件 的控件（会弹出系统文件选择窗口）。
+不写 type 时默认是文本框；写成 file 才是上传/选文件用的-->
+    <!-- name="avatar"
+作用：给这个字段起 提交时的名字。表单用 method="post" 等提交时，服务器会用这个名字收到文件字段，例如字段名是 avatar。
+同一表单里多个控件要用 不同的 name，否则分不清。 -->
+    <!-- multiple
+作用：让用户可以选择多个文件。默认只能选一个。写成 multiple 时，会变成多选。
+不写 multiple 时默认只能选一个；写成 multiple 时，会变成多选。 -->
+    <!-- accept
+作用：限制用户只能选择 某些类型的文件。比如限制只能选 .jpg 文件，就写成 accept=".jpg"。
+不写 accept 时，用户可以选任何类型的文件；写成 accept=".jpg" 时，用户只能选 .jpg 文件。 写成accept= *时，用户可以选任何类型的文件。-->
+
+    <button type="submit">登陆</button>
+    <button type="reset">重置</button>
+  </form>
+
+</body>
+
+</html>
