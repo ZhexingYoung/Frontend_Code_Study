@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>类选择器</title>
+  <!-- 类选择器：通过类名来选择元素 -->
+  <!-- 类名必须以字母开头，可以包含字母、数字、连字符-，不能包含空格 -->
+  <!-- 类名可以重复，可以多个元素使用同一个类名 -->
+  <!-- 类名可以用于多个元素，可以用于多个标签 -->
+
+  <style>
+    .red {
+      color: red;
+    }
+
+    .blue {
+      color: blue;
+    }
+
+    .sub-nav {
+      color: green;
+      font-size: 20px;
+    }
+
+    /* 两个英文中间用连字符-连接 */
+
+    .black {
+      font-size: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="red">大春哥</div>
+  <div class="red">二春哥</div>
+  <div class="red">三春哥</div>
+  <div class="red">四春哥</div>
+  <div class="red">五春哥</div>
+  <div class="blue">六春哥</div>
+  <div class="blue">七春哥</div>
+  <div class="blue">八春哥</div>
+  <div class="blue">九春哥</div>
+  <hr>
+
+  <ul>
+    <li class="red">大春哥</li>
+    <li class="red">二春哥</li>
+    <li class="blue">三春哥</li>
+    <li class="sub-nav">四春哥</li>
+    <li class="black sub-nav">五春哥</li>
+    <!-- 多类名选择器：通过多个类名来选择元素，类名之间用空格隔开 -->
+  </ul>
+</body>
+
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>类型选择器</title>
+  <style>
+    /* 类型选择器：通过标签名来选择元素 */
+    div {
+      color: pink;
+      /* 颜色 */
+      font-size: 20px;
+      /* 字体大小 */
+    }
+
+    ul {
+      color: blue;
+      /* 颜色 */
+      font-size: 20px;
+      /* 字体大小 */
+    }
+
+    /* 选择器只对当前标签有效，不会影响其他标签 */
+
+    div {
+      color: red;
+      /* 颜色 */
+      font-size: 30px;
+      /* 字体大小 */
+    }
+
+    /* CSS具有层叠性，如果多个选择器选中同一个标签，那么后面的选择器会覆盖前面的选择器 */
+  </style>
+</head>
+
+<body>
+  <div>大春哥</div>
+  <div>二春哥</div>
+  <div>三春哥</div>
+  <div>四春哥</div>
+  <div>五春哥</div>
+  <div>六春哥</div>
+  <div>七春哥</div>
+  <div>八春哥</div>
+  <div>九春哥</div>
+  <hr>
+  <ul>
+    <li>猪爸爸</li>
+    <li>猪妈妈</li>
+    <li>猪儿子</li>
+    <li>猪女儿</li>
+  </ul>
+
+</body>
+
+</html>

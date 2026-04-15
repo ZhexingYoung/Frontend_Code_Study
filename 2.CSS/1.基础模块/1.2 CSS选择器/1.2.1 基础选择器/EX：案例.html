@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>案例</title>
+  <style>
+    * {
+      margin: 0;
+      /* 清除所有元素外边距 */
+      padding: 0;
+      /* 清除所有元素内边距 */
+    }
+
+    .header {
+      background-color: #000000;
+      height: 80px;
+    }
+
+    .nav {
+      background-color: skyblue;
+      height: 60px;
+      width: 1000px;
+    }
+
+    .main {
+      width: 1000px;
+      height: 600px;
+      background-color: pink
+    }
+
+    .footer {
+      height: 150px;
+      background-color: purple;
+    }
+
+    .container {
+      margin: 0 auto;
+    }
+
+    /* 建立一个container类，让他继承剧中分布的特性，然后匹配给需要的div */
+  </style>
+</head>
+
+<body>
+  <!-- 头部 -->
+  <div class="header"></div>
+  <!-- 导航栏 -->
+  <div class="nav container"></div>
+  <!-- 主体 -->
+  <div class="main container"></div>
+  <!-- 底部 -->
+  <div class="footer"></div>
+
+</body>
+
+</html>
