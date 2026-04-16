@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Font简写和继承性</title>
+  <style>
+    /* font简写语法: 字体样式font-style 字体大小font-size/行高line-height 字体族font-family。其中字体大小font-size和行高line-height是必须的，字体样式、字体族是可选的 */
+    body {
+      font: italic 18px/1.5 'Arial', sans-serif;
+    }
+
+    /* 继承性：子元素会继承父元素的样式（高度不继承），当父元素没有设置某个样式时，子元素会继承父元素的样式 */
+    div {
+      color: red;
+      text-align: center;
+    }
+
+    p {
+      color: blue;
+    }
+  </style>
+</head>
+
+<body>
+  <p>CSS Font简写和继承性</p>
+  <div>
+    <h2>CSS Font简写和继承性</h2>
+    <p>CSS Font简写和继承性P</p>
+  </div>
+</body>
+
+</html>

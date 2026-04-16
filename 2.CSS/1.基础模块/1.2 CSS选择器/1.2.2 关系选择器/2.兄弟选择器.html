@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>兄弟选择器</title>
+  <style>
+    /* 兄弟选择器 ～：选择h2后面的所有p元素*/
+    h2~p {
+      color: red;
+    }
+
+    /* 兄弟选择器 +：选择h2后面的第一个p元素*/
+    h2+p {
+      color: blue;
+    }
+
+    /* 兄弟选择器 ~：选择active类后面的所有p元素*/
+    .active~li {
+      color: green;
+    }
+
+    /* 兄弟选择器 +：选择active类后面的第一个p元素*/
+    .active+li {
+      color: blueviolet;
+    }
+  </style> 
+
+</head>
+
+<body>
+  <div class="box">
+    <p>我是文字
+    </p>
+    <p>我是文字</p>
+    <p>我是文字</p>
+    <p>我是文字</p>
+    <p>我是文字</p>
+    <h2>我是标题</h2>
+    <p>我是文字</p>
+    <p>我是文字</p>
+    <p>我是文字</p>
+    <p>我是文字</p>
+  </div>
+
+  <ul>
+    <li>我是列表</li>
+    <li>我是列表</li>
+    <li>我是列表</li>
+    <li class="active">我是列表</li>
+    <li>我是列表</li>
+    <li>我是列表</li>
+    <li>我是列表</li>
+  </ul>
+
+</body>
+
+</html>

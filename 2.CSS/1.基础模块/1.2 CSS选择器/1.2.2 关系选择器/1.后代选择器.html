@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>后代选择器</title>
+  <style>
+    /* 后代选择器：通过父元素选择器选择子元素  上述代码的意思是选择footer类下的所有a元素 */
+    .footer a {
+      color: pink;
+    }
+
+    /* 这个是后代选择器，选择ul下的所有li下的所有a元素，可以嵌套多层，后代选择器可以嵌套多层，也可以不嵌套 */
+    ul li a {
+      color: red;
+      font-size: 20px;
+    }
+
+    div span {
+      color: blue
+    }
+
+    /* 子元素选择器：通过父元素选择器选择子元素 ,仅限一层*/
+    div>span {
+      color: green
+    }
+
+    /* 类选择器：通过类名来选择元素 */
+    .grandson {
+      color: yellow
+    }
+
+    /* 类选择器嵌套：通过父元素选择器选择子元素，仅限一层 */
+    .son>span {
+      color: red
+    }
+
+    /* 类选择器嵌套子选择器再嵌套子选择器： */
+    .son>p>span {
+      color: grey
+    }
+
+    /* 类选择器嵌套子选择器再嵌套子选择器再嵌套类选择器 */
+    .son>p>span.grandson {
+      color: blueviolet;
+    }
+  </style>
+</head>
+
+
+<body>
+  <!-- 后代选择器：通过父元素选择器选择子元素 -->
+  <ul>
+    <li><a href="#">首页</a></li>
+    <li><a href="#">产品介绍</a></li>
+    <li><a href="#">合作模式</a></li>
+  </ul>
+  <div class="footer">
+    <a href="#">关于我们</a>
+    <a href="#">联系我们</a>
+    <a href="#">隐私政策</a>
+  </div>
+
+  <!-- 子元素选择器：通过父元素选择器选择子元素，仅限一层 -->
+  <div>
+    <span>我是儿子</span>
+    <P>
+      <span>我是孙子</span>
+    </P>
+    <p>
+      <span class="grandson">我也是孙子</span>
+    </p>
+    <!-- 子元素选择器：通过父元素选择器选择子元素，仅限一层 -->
+    <div class="son"> 
+      <span>我是儿子</span>
+      <P>
+        <span>我是孙子</span>
+      </P>
+      <p>
+        <span class="grandson">我也是孙子</span>
+      </p>
+    </div>
+
+</body>
+
+</html>

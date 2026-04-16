@@ -1,0 +1,46 @@
+ @charset "UTF-8";
+
+ * {
+   margin: 0;
+   padding: 0;
+ }
+
+ body {
+   font: 14px / 1.5 Helvetica Neue, Helvetica, Arial, Microsoft Yahei, Hiragino Sans GB, Heiti SC, WenQuanYi Micro Hei, sans-serif;
+ }
+
+ .header {
+   background-color: #badef5;
+   width: 677px;
+   margin: 0 auto;
+ }
+
+ .container {
+   background-color: #ffffff;
+   color: #000000;
+   width: 610px;
+   margin: 0 auto;
+   padding: 20px;
+   /* 内边距 */
+ }
+
+ .container>p {
+   line-height: 27px;
+   text-indent: 2em;
+   text-align: justify;
+ }
+
+ /* 行间距2 首行缩进2em */
+
+ .container img {
+   width: 100%;
+ }
+
+ .container video {
+   width: 100%;
+ }
+
+ .poem {
+   text-align: center;
+   font-weight: bold;
+ }
