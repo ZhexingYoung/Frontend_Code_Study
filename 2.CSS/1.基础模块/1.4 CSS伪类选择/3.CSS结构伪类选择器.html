@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS结构伪类选择器</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    /* 这里使用结构伪类选择器来实现表格的隔行变色， */
+    .PL {
+      width: 100%;
+      border-collapse: collapse;
+      /* 合并表格的边框 */
+      text-align: center;
+      /* 文本居中 */
+      margin: 0 auto;
+      /* 外边距 */
+      border: 1px solid #ccc;
+      /* 边框 */
+      font-size: 16px;
+      /* 字体大小 */
+    }
+
+    /* 偶数行变色 */
+    .PL tr:nth-child(even) {
+      background-color: #f0f0f0;
+    }
+
+    /* 奇数行变色 */
+    .PL tr:nth-child(odd) {
+      background-color: #ffffff;
+    }
+
+    /* 表头变色 */
+    .PL th {
+      background-color: #118be2;
+      color: #fff;
+    }
+
+    /* 鼠标悬停变色 */
+    .PL tr:hover {
+      background-color: #6ac1ff;
+      color: #888888;
+      transition: 0.5s;
+    }
+
+  </style>
+</head>
+
+<body>
+  <!-- 表格隔行变色 -->
+  <table class="PL">
+    <thead>
+      <tr>
+        <th>球队</th>
+        <th>胜</th>
+        <th>平</th>
+        <th>负</th>
+        <th>积分</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>曼城</td>
+        <td>20</td>
+        <td>10</td>
+        <td>5</td>
+        <td>35</td>
+      </tr>
+      <tr>
+        <td>曼联</td>
+        <td>18</td>
+        <td>10</td>
+        <td>6</td>
+        <td>28</td>
+      </tr>
+      <tr>
+        <td>利物浦</td>
+        <td>16</td>
+        <td>10</td>
+        <td>8</td>
+        <td>26</td>
+      </tr>
+      <tr>
+        <td>切尔西</td>
+        <td>12</td>
+        <td>10</td>
+        <td>10</td>
+        <td>10</td>
+      </tr>
+      <tr>
+        <td>阿森纳</td>
+        <td>10</td>
+        <td>10</td>
+        <td>10</td>
+        <td>10</td>
+      <tr>
+        <td>热刺</td>
+        <td>10</td>
+        <td>10</td>
+        <td>10</td>
+        <td>10</td>
+      </tr>
+    </tbody>
+  </table>
+</body>
+
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS行为用户伪类</title>
+  <style>
+    .box {
+      width: 100px;
+      height: 100px;
+      background-color: pink;
+      margin: 0 auto;
+      text-align: center;
+      line-height: 100px;
+    }
+
+    /* 行为用户伪类：用于选择元素的某种行为 */
+    /* 焦点状态：a:focus */
+    .box:hover {
+      background-color: red;
+      color: yellow;
+    }
+
+    .search {
+      width: 100px;
+      height: 30px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      padding: 0 10px;
+      font-size: 16px;
+      transition: 2s;
+    }
+
+    .search:hover {
+      background-color: grey;
+      color: white;
+      width: 150px;
+      box-shadow: inset;
+    }
+
+    .search:focus {
+      background-color: rgba(55, 55, 55, 0.088);
+      color: rgb(0, 0, 0);
+      width: 200px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="box">
+    <p>我是文字</p>
+  </div>
+
+  <input class="search" type="text" placeholder="请输入内容">
+
+</body>
+
+</html>

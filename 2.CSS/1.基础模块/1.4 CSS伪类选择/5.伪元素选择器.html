@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>伪元素选择器</title>
+  <style>
+    /* 段落的首字母样式,需要伪元素选择器来实现,他可以选择p的第一个字母 */
+    .p p::first-letter {
+      font-size: 30px;
+      color: #f31414;
+    }
+
+    /* 段落的首行样式,需要伪元素选择器来实现,他可以选择p的第一行 */
+    .p p::first-line {
+      font-size: 20px;
+      color: #b09003;
+    }
+
+    /* 文本域的placeholder样式,需要伪元素选择器来实现,他可以选择input和textarea的placeholder样式 */
+    textarea::placeholder {
+      color: #727272;
+      font-size: 14px;
+    }
+
+    /* ::before是伪元素选择器，作用是在前面添加内容 */
+    .box p::before {
+      content: '你猜猜';
+      color: #f31414;
+    }
+
+    .box p::after {
+      content: '吗';
+      background-color: #912c2c;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="p">
+    <p>
+      伪元素选择器：
+      1.伪元素选择器是通过元素的特殊状况来实现的
+      2.伪元素选择器是通过元素的特殊状况来实现的
+      3.伪元素选择器是通过元素的特殊状况来实现的
+    </p>
+  </div>
+
+  <textarea name="" id="" cols="30" rows="10" placeholder="请输入内容"></textarea>
+
+  <div class="box">
+    <p>我是文字</p>
+  </div>
+
+</body>
+
+</html>

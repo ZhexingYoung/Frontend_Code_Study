@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>属性选择器</title>
+  <style>
+    /* 属性选择器：匹配包含指定属性的元素，这段代码的意思是，匹配class属性的元素 */
+    a[class] {
+      color: #f31414;
+      font-size: 14px;
+    }
+
+    /* 属性选择器：匹配包属性值等于指定值的元素，这段代码的意思是，匹配class属性值等于font的元素 */
+    a[class="font"] {
+      color: #21b949;
+      font-size: 14px;
+    }
+
+    /* 属性选择器：匹配包属性值以指定值开头的元素，这段代码的意思是，匹配class属性值以font开头的元素 */
+    a[class^="font"] {
+      color: #1d78a3;
+      font-size: 14px;
+    }
+
+    /* 属性选择器：匹配包属性值以指定值结尾的元素，这段代码的意思是，匹配class属性值以14结尾的元素 */
+    a[class$="14"] {
+      color: #0f3c51;
+      font-size: 14px;
+    }
+
+    /* 属性选择器：匹配包属性值包含指定值的元素，这段代码的意思是，匹配class属性值包含red的元素 */
+    a[class*="red"] {
+      color: #1d78a3;
+      font-size: 14px;
+    }
+
+    /* 属性选择器：匹配包属性值等于指定值的元素 */
+    /* 这段代码的意思是，匹配type属性值为text和password的元素 */
+    input[type="text"],
+    [type="password"] {
+      color: #f31414;
+      font-size: 14px;
+      background-color: #7b7b7b;
+      padding: 0px;
+      box-shadow: inset 0 0 10px 0 rgba(0, 0, 0, 0.5);
+    }
+  </style>
+</head>
+
+<body>
+
+  <a href="#">修改文字颜色</a>
+  <a href="#" class="font">修改文字颜色</a>
+  <a href="#" class="font14">修改文字颜色</a>
+  <a href="#" class="font16">修改文字颜色</a>
+  <a href="#" class="red">修改文字颜色</a>
+
+  <input type="text">
+  <input type="password">
+  <input type="radio">
+  <input type="checkbox">
+
+</body>
+
+</html>

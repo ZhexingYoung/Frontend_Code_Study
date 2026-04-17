@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>表单伪类选择器</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    button {
+      width: 100px;
+      height: 30px;
+      border: none;
+      background-color: coral;
+      color: white;
+      border-radius: 5px;
+      padding: 0 10px;
+      font-size: 14px;
+      transition: 0.5s;
+    }
+
+    /* 鼠标悬停在按钮上时 */
+    button:hover {
+      background-color: #f7f722;
+      color: white;
+      transition: 0.5s;
+    }
+
+    /* 按钮禁用时，需要JS来实现 */
+    button:disabled {
+      opacity: 0.5;
+      transition: 0.5s;
+    }
+
+    /* 这部分的意思是，当input被选中时，label会变成橙色 */
+    input:checked+label {
+      color: #ffa710;
+      transition: 0.5s;
+    }
+  </style>
+</head>
+
+<body>
+  <button>按钮</button>
+  <!-- 单选框没法直接修改样式，需要伪类选择器来实现 -->
+  <input type="checkbox" name="checkbox" id="agree">
+  <label for="agree">同意协议</label>
+</body>
+
+</html>
