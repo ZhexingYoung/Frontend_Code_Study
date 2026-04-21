@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>盒子背景</title>
+  <style>
+    .box1 {
+      width: 400px;
+      height: 400px;
+      /* background-color: pink; */
+      /* 1.背景图片 */
+      /* background-image: url('./img/ldh.png'); */
+      /* 2.背景图片平铺 */
+      /* 2.1 背景图片不重复 */
+      /* background-repeat: no-repeat; */
+      /* 2.2 背景图片重复 */
+      /* background-repeat: repeat; */
+      /* 2.3 背景图片重复x轴 */
+      /* background-repeat-x: repeat-x; */
+      /* 2.4 背景图片重复y轴 */
+      /* background-repeat-y: repeat-y; */
+      /* 2.5 背景图片重复x轴和y轴 */
+      /* background-repeat-x: repeat-x;
+      background-repeat-y: repeat-y; */
+
+      /* 3.背景图片位置 */
+      /* background-position：x y; */
+      /* background-position: 20px 10px; */
+      /* background-position: 50% 50%; */
+      /* 方位名词：top left right bottom center */
+      /* background-position: right bottom; */
+      /* 也可以直接一个center. background-position: center; */
+      /* 4.背景缩放 */
+      /* background-size: 100% 100%; */
+      /* background-size: 200px 100px; */
+      /* background-size: cover; 背景图片等比例缩放，直到完全覆盖盒子 */
+      /* background-size: contain; 背景图片等比例缩放，直到完全覆盖盒子 */
+
+      /* 5.背景固定 */
+      /* background-attachment: fixed; 背景图片固定，不会随页面滚动，只针对当前视口 */
+      /* background-attachment: scroll; 背景图片随页面滚动 */
+
+
+      /* 背景复合写法 */
+      background: pink url('./img/ldh.png') no-repeat center center / 200px scroll;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box1">盒子背景</div>
+</body>
+
+</html>

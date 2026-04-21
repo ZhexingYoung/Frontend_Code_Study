@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>小米卡片</title>
+  <style>
+    /* CSS样式初始化 */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    a:link,
+    a:visited,
+    a:hover,
+    a:active {
+      text-decoration: none;
+    }
+
+    .cart {
+      width: 234px;
+      height: 300px;
+      margin: 100px auto;
+      text-align: center;
+      background-color: rgb(255, 255, 255);
+      border: 1px solid rgb(230, 230, 230);
+      transition: all .3s;
+    }
+
+    .cart:hover {
+      transform: translateY(-5px);
+      box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.3);
+    }
+
+
+    .cart img {
+      width: 160px;
+      height: 160px;
+      margin-top: 20px;
+      /* display: block; */
+      /* 让图片变成块元素，这样就可以让图片居中， 也可以不加这个 在父级元素中直接text-align: center;这样就可以让子集元素里的“内容”居中 */
+    }
+
+    .cart .h3 {
+      font-size: 14px;
+      font-style: Helvetica, Arial, sans-serif;
+      font-weight: 400;
+      text-align: center;
+      margin: 0px 10px 2px 10px;
+      color: #333333;
+    }
+
+    .desc {
+      font-size: 12px;
+      font-style: Helvetica, Arial, sans-serif;
+      text-align: center;
+      margin: 0px 10px 0px 10px;
+      color: #b0b0b0;
+      overflow: hidden;
+      /* 溢出隐藏 */
+      text-overflow: ellipsis;
+      /* 溢出用省略号代替 */
+      white-space: nowrap;
+      /*这段代码的意思是让文字不换行*/
+    }
+
+    /* 多行文本溢出显示省略号 */
+    .ellipsis {
+      width: 200px;
+      height: 40px;
+      /* 需要把盒子的高度设置为文字的行高，这样就可以让文字换行  比如你想显示两行就把高度设置为2倍行高*/
+      background-color: pink;
+      display: -webkit-box;
+      /* 这个代码的意思是让文字变成多行文本 */
+      -webkit-box-orient: vertical;
+      /* 这个代码的意思是让文字变成垂直方向 */
+      -webkit-line-clamp: 2;
+      /* 这个代码的意思是让文字显示两行 */
+      overflow: hidden;
+      /* 这个代码的意思是让文字溢出隐藏 */
+      text-overflow: ellipsis;
+      /* 这个代码的意思是让文字溢出用省略号代替 */
+    }
+
+    .cart .price {
+      font-size: 14px;
+      font-style: Helvetica, Arial, sans-serif;
+      text-align: center;
+      margin: 10px;
+      color: #ff6700;
+    }
+
+    .cart .price del {
+      color: #b0b0b0;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="cart">
+    <img class="img" src="../img/mi.webp" alt="小米耳机"></img>
+    <h3 class="h3">Xiaomi Buds 5</h3>
+    <p class="desc">仿生曲线设计 | 哈曼金耳朵联合调音 | 耳机独立录音2.0</p>
+    <p class="price">
+      <span class="price-num">699元</span>
+      <del class="price-line">999元</del>
+    </p>
+
+  </div>
+
+  <p class="ellipsis">"小妖怪的夏天"团队！动画电影《浪浪山小妖怪》新预告，取经赛道的离谱组合值期待你的到来！"</p>
+
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>背景渐变</title>
+  <style>
+    .box1 {
+      width: 400px;
+      height: 120px;
+      border-radius: 60px;
+      border: 2px solid rgba(159, 159, 159, 0.779);
+      background: linear-gradient(135deg, red 0%, blue 100%);
+    }
+
+    .box1 p {
+      color: white;
+      font-size: 40px;
+      font-weight: 300;
+      text-align: center;
+      line-height: 120px;
+      font-style: italic;
+      letter-spacing: 10px;
+      margin: 0;
+    }
+
+    .p {
+      /* 这句话的意思是让文字变成行内块元素，这样就可以让文字变成背景渐变 */
+      display: inline-block;
+      font-size: 40px;
+      font-weight: 300;
+      background-image: linear-gradient(90deg, red, blue);
+      /* 背景裁剪，以文字为裁剪区域 */
+      background-clip: text;
+      /* -webkit-background-clip: text; */
+      /* 这个是用于webkit内核的浏览器，用于兼容性 */
+
+      -webkit-text-fill-color: transparent;
+      /* 这个代码的意思是文字颜色为透明，但是背景颜色为红色和蓝色，或者是RGBA(0, 0, 0, 0) */
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box1">
+    <p>渐变按钮</p>
+
+  </div>
+  <p class="p">渐变按钮</p>
+</body>
+
+</html>

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>外边距</title>
+  <style>
+    .box1 {
+      width: 200px;
+      height: 200px;
+      background-color: pink;
+      margin: 10px 20px 30px 40px;
+    }
+
+    .box2 {
+      width: 200px;
+      height: 200px;
+      background: skyblue;
+      margin-bottom: 30px;
+    }
+
+    .box3 {
+      width: 200px;
+      height: 200px;
+      background: green;
+      margin-left: 10px;
+
+    }
+
+    span {
+      /* 行内盒子的宽高无效 */
+      width: 100px;
+      height: 100px;
+      /* 行内盒子的上下外边距无效 */
+      background-color: pink;
+      margin: 10px 20px;
+      /* 行内盒子的左右外边距有效 */
+      padding: 10px;
+      border: 1px solid red;
+      /* padding和border有效，会撑大盒子，影响其他盒子 */
+    }
+
+
+    p {
+      text-align: center;
+    }
+
+    /* 块级盒子页面居中 */
+
+    [class^="m"] {
+      width: 100px;
+      height: 100px;
+    }
+
+    .mbox1 {
+      background-color: palegoldenrod;
+      margin: auto;
+      /* 这个margin: auto; 会让盒子水平居中 */
+    }
+
+    .mbox2 {
+      background-color: palegreen;
+      margin: 0 auto;
+      /* 这个margin: 0 auto; 会让盒子水平居中 */
+    }
+
+    .mbox3 {
+      background-color: paleturquoise;
+      margin-left: auto;
+      margin-right: auto;
+      /* 这个margin-left: auto; margin-right: auto; 会让盒子水平居中 */
+    }
+
+    /* 外边距折叠 */
+    .boxA {
+      width: 200px;
+      height: 200px;
+      background-color: pink;
+      margin-bottom: 100px;
+    }
+
+    .boxB {
+      width: 200px;
+      height: 200px;
+      background-color: skyblue;
+      /* 这个margin-top: 50px; 不会生效，因为上外边距和上面box的下外边距折叠了，所以只会取最大的那个值，就是100px */
+    }
+
+    .father {
+      width: 200px;
+      height: 200px;
+      background-color: pink;
+      margin-bottom:
+        100px;
+      /* 解决父子盒子外边距塌陷问题 */
+      /* 1.给父亲添加边框 border: 1px solid red; */
+      /* 2.父级或者直接加padding: 1px; */
+      /* 3.给父亲添加overflow: hidden; */
+      overflow: hidden;
+
+    }
+
+    .son {
+      width: 80px;
+      height: 80px;
+      background-color: skyblue;
+      margin-top: 50px;
+    }
+  </style>
+</head>
+
+<!-- 外边距上右下左分别设置 -->
+
+<body>
+  <div class="box1">第一个盒子</div>
+  <div class="box2">第二个盒子</div>
+  <div class="box3">第三个盒子</div>
+
+  <!-- 块级盒子水平居中 -->
+  <div class="mbox1"></div>
+  <div class="mbox2"></div>
+  <div class="mbox3"></div>
+
+  <!-- 行内盒子上下外边距无效，左右外边距有效  -->
+  <p><span>我是行内盒子</span></p>
+
+  <!-- 两盒子外边距折叠 -->
+  <div class="boxA">盒子A</div>
+  <div class="boxB">盒子B</div>
+</body>
+
+<!-- 父子集盒子外边距塌陷 -->
+<div class="father">
+  <div class="son">盒子B</div>
+</div>
+
+</html>

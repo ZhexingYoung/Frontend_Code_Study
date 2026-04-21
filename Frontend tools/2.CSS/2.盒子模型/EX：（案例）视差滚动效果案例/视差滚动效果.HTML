@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>视差滚动效果</title>
+  <style>
+    /* 这部分是为了所有元素margin和padding都为0，并且盒子模型为border-box */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+
+    /* 这部分是为了让整个页面铺满整个屏幕 */
+    html,
+    body {
+      height: 100%;
+      width: 100%;
+    }
+
+    .content {
+      padding: 20px;
+      width: 100%;
+      height: 25%;
+      background-color: rgba(0, 0, 0, 0.9);
+      color: white;
+      font-size: 16px;
+      font-weight: normal;
+      text-align: left;
+      line-height: 30px;
+    }
+
+    .h2-box {
+      color: white;
+      font-size: 60px;
+      font-weight: 400;
+      text-align: center;
+      letter-spacing: 10px;
+      margin-top: 200px;
+    }
+
+    section[class^="section"] {
+      width: 100%;
+      height: 100%;
+    }
+
+    .section1 {
+      background-image: url('../img/bg1.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+    }
+
+    .section2 {
+      background-image: url('../img/bg2.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+    }
+
+    .section3 {
+      background-image: url('../img/bg3.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+    }
+
+    .section4 {
+      background-image: url('../img/bg4.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- 第一屏 -->
+  <section class="section1">
+    <div class="content">
+      <p>夕阳是熔化的铁，把云絮焊成金红的鳞甲。天空在燃烧，而大地只是沉默地承接这些温柔的灰烬。</p>
+      <p>这样的黄昏，让人想起灶膛里将熄的柴火，明明灭灭地舔着旧事。而光影是狡黠的，它把柳枝拉长成琴弦，却让归鸟的翅膀，在弦上拨出无声的颤音。</p>
+      <p>偶尔有晚钟传来，像一粒铜纽扣，滚进群山厚重的褶皱里。</p>
+      <p>风景独好。</p>
+
+    </div>
+    <div class="h2-box-container">
+      <h2 class="h2-box">落日夕阳</h2>
+    </div>
+  </section>
+
+  <section class="section2">
+    <div class="content">
+      <p>夕阳是熔化的铁，把云絮焊成金红的鳞甲。天空在燃烧，而大地只是沉默地承接这些温柔的灰烬。</p>
+      <p>这样的黄昏，让人想起灶膛里将熄的柴火，明明灭灭地舔着旧事。而光影是狡黠的，它把柳枝拉长成琴弦，却让归鸟的翅膀，在弦上拨出无声的颤音。</p>
+      <p>偶尔有晚钟传来，像一粒铜纽扣，滚进群山厚重的褶皱里。</p>
+      <p>景色独好。</p>
+    </div>
+
+    <div class="h2-box-container">
+      <h2 class="h2-box">山水湖色</h2>
+    </div>
+  </section>
+
+  <section class="section3">
+    <div class="content">
+      <p>夕阳是熔化的铁，把云絮焊成金红的鳞甲。天空在燃烧，而大地只是沉默地承接这些温柔的灰烬。</p>
+      <p>这样的黄昏，让人想起灶膛里将熄的柴火，明明灭灭地舔着旧事。而光影是狡黠的，它把柳枝拉长成琴弦，却让归鸟的翅膀，在弦上拨出无声的颤音。</p>
+      <p>偶尔有晚钟传来，像一粒铜纽扣，滚进群山厚重的褶皱里。</p>
+      <p>景色独好。</p>
+
+    </div>
+    <div class="h2-box-container">
+      <h2 class="h2-box">广阔蓝海</h2>
+    </div>
+  </section>
+  <section class="section4">
+    <div class="content">
+      <p>夕阳是熔化的铁，把云絮焊成金红的鳞甲。天空在燃烧，而大地只是沉默地承接这些温柔的灰烬。</p>
+      <p>这样的黄昏，让人想起灶膛里将熄的柴火，明明灭灭地舔着旧事。而光影是狡黠的，它把柳枝拉长成琴弦，却让归鸟的翅膀，在弦上拨出无声的颤音。</p>
+      <p>偶尔有晚钟传来，像一粒铜纽扣，滚进群山厚重的褶皱里。</p>
+      <p>景色独好。</p>
+
+    </div>
+    <div class="h2-box-container">
+      <h2 class="h2-box">白雪蓝天</h2>
+    </div>
+  </section>
+
+</body>
+
+</html>

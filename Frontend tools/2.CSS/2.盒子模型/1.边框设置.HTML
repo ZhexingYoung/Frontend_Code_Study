@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>边框设置</title>
+  <style>
+    div[class*="box"] {
+      width: 200px;
+      height: 200px;
+      margin: 20px;
+      padding: 20px;
+    }
+
+    .box1 {
+      border: 1px solid red;
+    }
+
+    .box2 {
+      border: 1px dashed blue;
+    }
+
+    .box3 {
+      border: 1px dotted green;
+    }
+
+    .box4 {
+      border-top: 4px solid red;
+      border-bottom: 2px dotted blue;
+      border-left: 2px dashed green;
+      border-right: 1px solid yellow;
+    }
+
+    .box5 {
+      border: 1px solid grey;
+      border-top: 4px solid orange;
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <div class="box1">实线边框</div>
+  <div class="box2">虚线边框</div>
+  <div class="box3">点线边框</div>
+  <div class="box4">不同边框</div>
+  <div class="box5">不同边框2</div>
+  <div class="box6">圆角边框</div>
+
+
+</body>
+
+</html>

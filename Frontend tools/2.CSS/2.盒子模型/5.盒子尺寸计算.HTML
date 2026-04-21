@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>盒子尺寸计算box-sizing</title>
+  <style>
+
+    /* 盒子尺寸计算模块，默认的是box-sizing：content-box */
+    .box1 {
+      box-sizing: content-box;
+      /* 这个属性不会包含padding和border的宽度，会影响盒子的实际宽度 */
+      width: 200px;
+      height: 200px;
+      background-color: pink;
+      border: 10px solid red;
+      padding: 10px;
+    }
+
+    .box2 {
+      box-sizing: border-box;
+      /* 这个属性会包含padding和border的宽度，不会影响盒子的实际宽度 */
+      width: 200px;
+      height: 200px;
+      background-color: skyblue;
+      border: 10px solid red;
+      padding: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box1">content-box</div>
+  <div class="box2">border-box</div>
+
+</body>
+
+</html>
