@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>精灵图</title>
+  <style>
+    .box {
+      width: 28px;
+      height: 26px;
+      background-image: url('./img/wz.webp');
+      background-repeat: no-repeat;
+      /* 精灵图的核心是背景 */
+      /* 因为是用的同一张精灵图 所以只需要改变position的坐标就可以实现不同的图片 */
+    }
+
+    .box2 {
+      background-position: -90px -170px;
+      /* 记住position的坐标是相对于背景图片的左上角，所以-90px -170px 就是从背景图片的左上角向右移动90px，向下移动170px */
+    }
+
+    .box1 {
+      background-position: 0px -170px;
+      /* 记住position的坐标是相对于背景图片的左上角，所以-180px -170px 就是从背景图片的左上角向右移动180px，向下移动170px */
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box box1"></div>
+  <div class="box box2"></div>
+
+
+</body>
+
+</html>
