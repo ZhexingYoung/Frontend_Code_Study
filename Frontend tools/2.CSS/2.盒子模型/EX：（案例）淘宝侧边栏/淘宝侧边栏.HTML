@@ -5,6 +5,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>淘宝侧边栏</title>
+  <!-- 先link一下下载好的图标库css文件 -->
+  <link rel="stylesheet" href="../iconfont1/iconfont.css">
 
   <style>
     * {
@@ -12,6 +14,8 @@
       padding: 0;
       box-sizing: border-box;
     }
+
+
 
     ul,
     ol,
@@ -55,6 +59,7 @@
       font-size: 14px;
       font-weight: normal;
       transition: all .5s;
+      padding-left: 10px;
     }
 
     .service-list li:hover {
@@ -66,7 +71,14 @@
       transition: all, .3s;
     }
 
-    .service-list li a:hover {
+    .service-list li a:hover,
+    .service-list li i:hover {
+      color: #ff5000;
+    }
+
+    /* 第一行红色 */
+    .service-list li:first-child i,
+    .service-list li:first-child a {
       color: #ff5000;
     }
   </style>
@@ -82,16 +94,21 @@
     <!-- 服务主题模块 -->
     <ul class="service-list">
       <li>
-        <a href="#">电脑</a>
-        <a href="#">配件</a>
-        <a href="#">办公</a>
-        <a href="#">文具</a>
+        <i class="iconfont icon-huore"></i>
+        <a href="#">超级88大促 </a>
+        <i class="iconfont icon-xiexian"></i>
+        <a href="#">抢省钱攻略</a>
       </li>
+
       <li>
-        <a href="#">工业品</a>
-        <a href="#">商业</a>
-        <a href="#">农业</a>
-        <a href="#">定制</a>
+        <i class="iconfont icon-diannao"></i>
+        <a href="#">电脑</a>
+        <i class="iconfont icon-xiexian"></i>
+        <a href="#">手机</a>
+        <i class="iconfont icon-xiexian"></i>
+        <a href="#">数码</a>
+        <i class="iconfont icon-xiexian"></i>
+        <a href="#">家电</a>
       </li>
       <li>
         <a href="#">家电</a>

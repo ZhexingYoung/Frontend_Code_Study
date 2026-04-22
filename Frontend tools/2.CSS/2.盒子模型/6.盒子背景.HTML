@@ -9,7 +9,7 @@
     .box1 {
       width: 400px;
       height: 400px;
-      /* background-color: pink; */
+      /* background-color: pink;RGBA(255, 192, 203, 0.5)*/
       /* 1.背景图片 */
       /* background-image: url('./img/ldh.png'); */
       /* 2.背景图片平铺 */
@@ -36,14 +36,19 @@
       /* background-size: 100% 100%; */
       /* background-size: 200px 100px; */
       /* background-size: cover; 背景图片等比例缩放，直到完全覆盖盒子 */
-      /* background-size: contain; 背景图片等比例缩放，直到完全覆盖盒子 */
+      /* background-size: contain; 背景图片等比例缩放，直到完全覆盖盒子，但是不会裁剪图片 */
 
       /* 5.背景固定 */
       /* background-attachment: fixed; 背景图片固定，不会随页面滚动，只针对当前视口 */
       /* background-attachment: scroll; 背景图片随页面滚动 */
 
 
-      /* 背景复合写法 */
+      /* 背景复合写法 ,具体的语法格式是：background: 背景颜色 背景图片 背景重复 背景位置 背景缩放; */
+      /* 背景颜色：pink */
+      /* 背景图片：url('./img/ldh.png') */
+      /* 背景重复：no-repeat */
+      /* 背景位置：center center */
+      /* 背景缩放：200px scroll */
       background: pink url('./img/ldh.png') no-repeat center center / 200px scroll;
     }
   </style>

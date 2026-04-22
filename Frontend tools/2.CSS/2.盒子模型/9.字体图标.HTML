@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>字体图标</title>
+  <!-- 先link一下下载好的图标库css文件 -->
+  <link rel="stylesheet" href="./iconfont/iconfont.css">
+  <style>
+    /* 这里需要注意权重，因为原本的HTML里有对.icon进行样式覆盖，所以这里需要添加权重 */
+    .icon-good {
+      font-size: 100px;
+      color: red;
+    }
+
+    .icon-xihuan {
+      font-size: 100px;
+      color: blue;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- 直接使用iconfont类，然后加上icon-图标名，span可以用来包裹图标，也可以用div包裹 -->
+  <span class="iconfont icon-good"></span>
+  <span class="iconfont icon-xihuan"></span>
+</body>
+
+</html>
