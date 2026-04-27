@@ -16,19 +16,13 @@
 
   .item {
     flex: 1;
-    /* flex的完整写法是：flex: 0 1 20%; */
+    /* flex的完整写法是：flex: 1 1 20%;这三个值的意思是：
+    第一个值的意思是：子元素的宽度为1，即在父元素中占据1个单位的空间，当容器有剩余空间时，这个元素可以扩张，占据剩余空间
+    第二个值的意思是：子元素的宽度为1，缩放不会影响子元素的宽度，默认是1，当空间不够时，元素允许缩小。如果是0，则元素不允许缩小。
+    第三个值的意思是：子元素的宽度为20%，即在父元素中占据20%的空间，当空间不够时，元素允许缩小。如果是0，则元素不允许缩小。*/
     width: 300px;
     height: 300px;
-    border-radius: 10px;
-  }
-
-  .item:nth-child(even) {
-    background-color: skyblue;
-  }
-
-  .item:nth-child(odd) {
-    background-color: pink;
-  }
+    border-radius: 10px;  }
 </style>
 
 <body>

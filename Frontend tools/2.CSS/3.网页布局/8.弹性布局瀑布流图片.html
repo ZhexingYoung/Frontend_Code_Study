@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>弹性布局瀑布流图片</title>
+</head>
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  .col-flex {
+    display: flex;
+    gap: 16px;
+    width: 1180px;
+    /* border: 1px solid red; */
+    margin: 20px auto;
+  }
+
+  .col-flex .item {
+    flex: 1;
+  }
+
+  .col-flex .item a {
+    display: block;
+    width: 100%;
+    border-radius: 18px;
+    overflow: hidden;
+    margin-bottom: 15px;
+  }
+
+  .col-flex .item a img {
+    width: 100%;
+    /* 解决图片插入底部空白缝隙的问题 */
+    /*1. 图片设置为块级元素 */
+    display: block;
+    /*2. 设置图片对齐方式不是基线对齐 */
+    /* vertical-align: top; */
+    /* vertical-align也可以用于垂直居中效果 */
+  }
+</style>
+
+<body>
+  <div class="col-flex">
+    <div class="item">
+      <a href="">
+        <img src="./img/c1.webp" alt="">
+      </a>
+      <a href="">
+        <img src="./img/c2.webp" alt="">
+      </a>
+      <a href="">
+        <img src="./img/c3.webp" alt="">
+      </a>
+      <a href="">
+        <img src="./img/c4.webp" alt="">
+      </a>
+      <a href="">
+        <img src="./img/c5.webp" alt="">
+      </a>
+      <a href="">
+        <img src="./img/c6.webp" alt="">
+      </a>
+      <a href="">
+        <img src="./img/c7.webp" alt="">
+      </a>
+      <a href="">
+        <img src="./img/c8.webp" alt="">
+      </a>
+      <a href="">
+        <img src="./img/c9.webp" alt="">
+      </a>
+      <a href="">
+        <img src="./img/c10.webp" alt="">
+      </a>
+    </div>
+    <div class="item">
+      <a href="">
+        <img src="./img/c2-1.webp" alt="">
+      </a>
+      <a href="">
+        <img src="./img/c2-2.webp" alt="">
+      </a>
+      <a href="">
+        <img src="./img/c2-3.webp" alt="">
+      </a>
+      <a href="">
+        <img src="./img/c2-4.webp" alt="">
+      </a>
+      <a href="">
+        <img src="./img/c2-5.webp" alt="">
+      </a>
+      <a href="">
+        <img src="./img/c2-6.webp" alt="">
+      </a>
+      <a href="">
+        <img src="./img/c2-7.webp" alt="">
+      </a>
+      <a href="">
+        <img src="./img/c2-8.webp" alt="">
+      </a>
+    </div>
+    <div class="item">
+      <a href="">
+        <img src="./img/c3-1.webp" alt="">
+      </a>
+      <a href="">
+        <img src="./img/c3-2.webp" alt="">
+      </a>
+      <a href="">
+        <img src="./img/c3-3.webp" alt="">
+      </a>
+      <a href="">
+        <img src="./img/c3-4.webp" alt="">
+      </a>
+      <a href="">
+        <img src="./img/c3-5.webp" alt="">
+      </a>
+      <a href="">
+        <img src="./img/c3-6.webp" alt="">
+      </a>
+      <a href="">
+        <img src="./img/c3-7.webp" alt="">
+      </a>
+      <a href="">
+        <img src="./img/c3-8.webp" alt="">
+      </a>
+    </div>
+    <div class="item">
+      <a href="">
+        <img src="./img/c4-1.webp" alt="">
+      </a>
+      <a href="">
+        <img src="./img/c4-2.webp" alt="">
+      </a>
+      <a href="">
+        <img src="./img/c4-3.webp" alt="">
+      </a>
+      <a href="">
+        <img src="./img/c4-4.webp" alt="">
+      </a>
+      <a href="">
+        <img src="./img/c4-5.webp" alt="">
+      </a>
+      <a href="">
+        <img src="./img/c4-6.webp" alt="">
+      </a>
+      <a href="">
+        <img src="./img/c4-7.webp" alt="">
+      </a>
+      <a href="">
+        <img src="./img/c4-8.webp" alt="">
+      </a>
+    </div>
+
+    <div class="item">
+      <a href="">
+        <img src="./img/c5-1.webp" alt="">
+      </a>
+      <a href="">
+        <img src="./img/c5-2.webp" alt="">
+      </a>
+      <a href="">
+        <img src="./img/c5-3.webp" alt="">
+      </a>
+      <a href="">
+        <img src="./img/c5-4.webp" alt="">
+      </a>
+      <a href="">
+        <img src="./img/c5-5.webp" alt="">
+      </a>
+      <a href="">
+        <img src="./img/c5-6.webp" alt="">
+      </a>
+      <a href="">
+        <img src="./img/c5-7.webp" alt="">
+      </a>
+    </div>
+
+</body>
+
+</html>
