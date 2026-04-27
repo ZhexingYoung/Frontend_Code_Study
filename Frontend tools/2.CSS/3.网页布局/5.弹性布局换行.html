@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>弹性布局换行</title>
+  <style>
+    .box {
+      /* box不指定高度时，会自动适应子元素的高度 */
+      margin: 30px auto;
+      display: flex;
+      border: 1px solid red;
+      flex-wrap: wrap;
+      /* wrap：子元素换行 */
+      /* nowrap：子元素不换行 */
+      /* wrap-reverse：子元素换行，但是换行的方向与wrap相反 */
+      justify-content: space-between;
+
+      /* 多行交叉轴对齐：align-content: center;
+       center：子元素居中对齐
+       flex-start：子元素顶部对齐
+       flex-end：子元素底部对齐
+       space-between：子元素间距相等
+       space-around：子元素间距相等，不包括两端
+       space-evenly：子元素与边框间距相等，包括两端
+       */
+      row-gap: 10px;
+    }
+
+    .item {
+      width: 200px;
+      height: 200px;
+      border-radius: 10px;
+      background-color: pink;
+    }
+  </style>
+</head>
+<div class="box">
+  <div class="item">1</div>
+  <div class="item">2</div>
+  <div class="item">3</div>
+  <div class="item">4</div>
+  <div class="item">5</div>
+  <div class="item">6</div>
+  <div class="item">7</div>
+  <div class="item">8</div>
+  <div class="item">9</div>
+  <div class="item">10</div>
+  <div class="item">11</div>
+</div>
+
+<body>
+
+</body>
+
+</html>
