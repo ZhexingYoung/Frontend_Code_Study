@@ -1,0 +1,323 @@
+/* 写公共样式，比如网页的头部和底部 */
+.w {
+  width: 1240px;
+  margin: 0 auto;
+}
+
+/* 1.1 头部快捷导航栏 */
+.shortcut {
+  height: 52px;
+  background-color: #333333;
+}
+
+.shortcut ul {
+  height: 52px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.shortcut .line {
+  margin: 0 15px;
+  height: 12px;
+  width: 1px;
+  background-color: #999;
+}
+
+.shortcut li .iconfont {
+  font-size: 20px;
+  margin-right: 10px;
+}
+
+.shortcut li:nth-child(1) a {
+  color: #5EB69C;
+
+}
+
+.shortcut li a {
+  /* 垂直居中a标签内的所有元素 */
+  display: flex;
+  align-items: center;
+  color: #fff;
+}
+
+.shortcut li a:hover {
+  color: #5EB69C;
+}
+
+/* 1.2 头部logo和导航栏 */
+.header {
+  background: #ffffff;
+  height: 132px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* 1.2.1 头部logo */
+.header .logo {
+  display: flex;
+  align-items: center;
+  width: 200px;
+  height: 88px;
+}
+
+.header .logo h1 {
+  width: 100%;
+  height: 100%;
+}
+
+.header .logo h1 a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-image: url(../assets/images/logo.png);
+  background-size: no-repeat;
+  /* 隐藏文字，只显示图片：文字往左移动9999px，超出部分隐藏起来 */
+  text-indent: -9999px;
+  overflow: hidden;
+}
+
+/* 1.2.2 导航栏 */
+.header .nav {
+  gap: 48px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header .nav li {
+  height: 22px;
+  width: 32px;
+  /* 左右间距为48px */
+  font-family: PingFang SC;
+  color: #333333;
+  font-size: 16px;
+}
+
+.header .nav li a {
+  display: flex;
+  align-items: center;
+  height: 40px;
+}
+
+
+.header .nav li a:hover {
+  color: #5EB69C;
+  /* 下边框为2px，颜色为#5EB69C */
+  border-bottom: 2px solid #5EB69C;
+}
+
+/* 1.2.3 搜索栏 */
+.header .search input {
+  width: 170px;
+  height: 40px;
+  border-bottom: 2px solid #f4f4f4;
+  border-radius: 3px;
+  padding-left: 28px;
+  font-size: 16px;
+}
+
+.header .search input::placeholder {
+  color: #ccc;
+  font-size: 16px;
+}
+
+/* 1.2.4 购物车 */
+.header .cart i {
+  font-size: 40px;
+  margin-right: 20px;
+}
+
+/* 2.网页的底部 */
+/* 2.1 底部口号栏目 */
+.footer {
+  background: #f5f5f5;
+  height: 580px;
+  width: 100%;
+}
+
+.footer .slogan {
+  height: 178px;
+  width: 100%;
+  background: #f5f5f5;
+}
+
+.footer .slogan ul {
+  height: 178px;
+  width: 1240px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  border-bottom: 1px solid #e8e8e8;
+}
+
+.footer .slogan ul li {
+  display: flex;
+  align-items: center;
+}
+
+/* 精灵图标部分 */
+.footer .slogan ul li h5 {
+  width: 58px;
+  height: 58px;
+  background-image: url(../assets/images/sprite.png);
+  background-repeat: no-repeat;
+}
+
+/* 这里不能使用h5.icon1，因为这个意思是h5标签的class属性为icon1，而不是h5标签的子元素的class属性为icon1*/
+.footer .slogan ul li .icon1 {
+  background-position: 0px 0px;
+}
+
+.footer .slogan ul li .icon2 {
+  background-position: 0px -58px;
+}
+
+.footer .slogan ul li .icon3 {
+  background-position: 0px -116px;
+}
+
+.footer .slogan ul li .icon4 {
+  background-position: 0px -174px;
+}
+
+.footer .slogan ul li p {
+  display: flex;
+  font-family: PingFangSC-Regular;
+  font-size: 28px;
+  color: #333333;
+  letter-spacing: 0;
+  font-weight: 400;
+  margin-left: 30px;
+}
+
+/* 2.2.1 底部服务模块 */
+.footer .service {
+  height: 146px;
+  width: 1240px;
+  margin: 0 auto;
+  margin-top: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer .service dl {
+  gap: 84px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.footer .service dl .box {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.footer .service dl .box dt {
+  display: block;
+  font-family: PingFangSC-Regular;
+  font-size: 18px;
+  color: #333333;
+  letter-spacing: 0;
+  font-weight: 400;
+  margin-bottom: 30px;
+}
+
+.footer .service dl .box dd a {
+  display: block;
+  font-family: PingFangSC-Regular;
+  font-size: 16px;
+  color: #969696;
+  letter-spacing: 0;
+  line-height: 22px;
+  font-weight: 400;
+  margin-bottom: 10.5px;
+}
+
+/* 2.3 底二维码模块 */
+.footer .qrcode {
+  height: 162.5px;
+  width: 295px;
+}
+
+.footer .qrcode ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer .qrcode img {
+  width: 120px;
+  height: 120px;
+}
+
+.footer .qrcode ul li {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer .qrcode ul li p {
+  font-family: PingFangSC-Regular;
+  font-size: 16px;
+  color: #969696;
+  letter-spacing: 0;
+  font-weight: 400;
+  margin-top: 10px;
+}
+
+/* 2.3 底部版权信息 */
+.footer .copyright {
+  height: 60px;
+  width: 1240px;
+  margin: 0 auto;
+  margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer .copyright ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer .copyright ul li {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer .copyright ul li a {
+  font-family: PingFangSC-Regular;
+  font-size: 16px;
+  color: #A1A1A1;
+  letter-spacing: 0;
+  text-align: center;
+  line-height: 30px;
+  font-weight: 400;
+}
+
+.footer .copyright ul li p {
+  margin: 0 15px;
+  font-family: PingFangSC-Regular;
+  font-size: 16px;
+  color: #A1A1A1;
+  letter-spacing: 0;
+  text-align: center;
+  line-height: 30px;
+  font-weight: 400;
+}

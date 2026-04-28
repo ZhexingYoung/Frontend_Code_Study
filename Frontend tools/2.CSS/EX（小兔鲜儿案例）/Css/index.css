@@ -1,0 +1,465 @@
+/* 这里写index页面的专门样式 */
+.entry {
+  background-color: #f5f5f5;
+  height: 500px;
+  width: 100%;
+}
+
+.entry .banner {
+  background-color: #f5f5f5;
+  height: 500px;
+  width: 1240px;
+  background-image: url(../assets/uploads/banner1.png);
+  margin: 0 auto;
+}
+
+.entry .categery {
+  height: 500px;
+  width: 250px;
+}
+
+.entry .categery ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.entry .categery li {
+  opacity: 0.42;
+  background: #000000;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 250px;
+  height: 50px;
+}
+
+.entry .categery li a {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  padding-left: 29px;
+  font-family: PingFangSC-Medium;
+  font-size: 16px;
+  color: #FFFFFF;
+  letter-spacing: 0;
+  text-align: left;
+  line-height: 22px;
+  font-weight: 500;
+}
+
+.entry .categery li a span {
+  margin-left: 14px;
+  font-family: PingFangSC-Medium;
+  font-size: 14px;
+  color: #FFFFFF;
+  letter-spacing: 0;
+  text-align: left;
+  font-weight: 500;
+}
+
+.entry .categery li a i {
+  font-size: 10px;
+  color: #FFFFFF;
+  margin-right: 12px;
+  margin-left: auto;
+}
+
+.entry .categery li:hover {
+  background: #00BE9A;
+  opacity: 1;
+}
+
+/* 1.4 网页的新鲜好物模块 */
+.fresh {
+  height: 516px;
+  margin: 0 auto;
+}
+
+.fresh .fresh-title {
+  height: 112px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.fresh .fresh-title h2 {
+  font-family: PingFangSC-Regular;
+  font-size: 30px;
+  color: #333333;
+  letter-spacing: 0;
+  font-weight: 400;
+}
+
+.fresh .fresh-title h2 span {
+  font-family: PingFangSC-Regular;
+  font-size: 16px;
+  letter-spacing: 0;
+  font-weight: 400;
+  margin-left: 35px;
+}
+
+.fresh .fresh-title a {
+  font-family: PingFangSC-Regular;
+  font-size: 16px;
+  color: #A1A1A1;
+  letter-spacing: 0;
+  line-height: 22px;
+  font-weight: 400;
+}
+
+.fresh .fresh-content ul {
+  height: 404px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.fresh .fresh-content ul li img {
+  width: 304px;
+  height: 304px;
+}
+
+.fresh .fresh-content ul li a {
+  display: block;
+  height: 100%;
+}
+
+.fresh .fresh-content ul li .goods-info {
+  width: 304px;
+  height: 100px;
+  background-color: #eef9f4;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.fresh .fresh-content ul li .goods-info h3 {
+  font-family: PingFangSC-Regular;
+  font-size: 20px;
+  color: #333333;
+  letter-spacing: 1px;
+  text-align: center;
+  font-weight: 400;
+  width: 255px;
+  /* 文本溢出显示省略号 */
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.fresh .fresh-content ul li .goods-info p {
+  font-family: PingFangSC-Regular;
+  font-size: 22px;
+  color: #AA2113;
+  letter-spacing: 1.1px;
+  line-height: 31px;
+  font-weight: 400;
+}
+
+.fresh .fresh-content ul li .goods-info p span {
+  font-size: 18px;
+}
+
+/* 1.5 网页的人气推荐模块 */
+.recommend {
+  height: 516px;
+  margin: 0 auto;
+}
+
+.recommend .recommend-title {
+  height: 112px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.recommend .recommend-title h2 {
+  font-family: PingFangSC-Regular;
+  font-size: 30px;
+  color: #333333;
+  letter-spacing: 0;
+  font-weight: 400;
+}
+
+.recommend .recommend-title h2 span {
+  font-family: PingFangSC-Regular;
+  font-size: 16px;
+  letter-spacing: 0;
+  font-weight: 400;
+  margin-left: 35px;
+}
+
+.recommend .recommend-title a {
+  font-family: PingFangSC-Regular;
+  font-size: 16px;
+  color: #A1A1A1;
+  letter-spacing: 0;
+  line-height: 22px;
+  font-weight: 400;
+}
+
+.recommend .recommend-content ul {
+  height: 404px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.recommend .recommend-content ul li a {
+  display: block;
+  height: 100%;
+}
+
+.recommend .recommend-content ul li img {
+  width: 304px;
+  height: 304px;
+}
+
+.recommend .recommend-content ul li .recommend-info {
+  width: 304px;
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.recommend .recommend-content ul li h5 {
+  font-family: PingFangSC-Regular;
+  font-size: 20px;
+  color: #333333;
+  letter-spacing: 1px;
+  text-align: center;
+  font-weight: 400;
+}
+
+.recommend .recommend-content ul li p {
+  font-family: PingFangSC-Regular;
+  font-size: 16px;
+  color: #A1A1A1;
+  letter-spacing: 0;
+  text-align: center;
+  font-weight: 400;
+}
+
+/* 1.6 服饰模块*/
+.clothing {
+  height: 722px;
+  width: 1240px;
+  margin: 0 auto;
+  background-color: #f5f5f5;
+}
+
+.clothing .clothing-title {
+  padding-top: 10px;
+  height: 102px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.clothing .clothing-title h2 {
+  font-family: PingFangSC-Regular;
+  font-size: 30px;
+  color: #333333;
+  letter-spacing: 0;
+  font-weight: 400;
+}
+
+.clothing .clothing-category {
+  display: flex;
+}
+
+.clothing .clothing-category ul {
+  display: flex;
+  gap: 10px;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-right: 60px;
+}
+
+.clothing .clothing-category ul li a {
+  padding: 3px 8px;
+  font-family: PingFangSC-Regular;
+  font-size: 16px;
+  color: #333333;
+  letter-spacing: 0;
+  font-weight: 400;
+}
+
+.clothing .clothing-category ul li a:hover {
+  background-color: #00BE9A;
+  color: #FFFFFF;
+  border-radius: 5px;
+}
+
+.clothing .clothing-category a {
+  font-family: PingFangSC-Regular;
+  font-size: 16px;
+  color: #A1A1A1;
+  letter-spacing: 0;
+  line-height: 22px;
+  font-weight: 400;
+}
+
+/* 1.6.2 服饰内容模块 */
+.clothing .clothing-content {
+  height: 610px;
+  width: 1240px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.clothing .clothing-content .clothing-cover {
+  width: 248px;
+  height: 610px;
+  background-image: url(../assets/uploads/colthes_left.png);
+}
+
+.clothing .clothing-content .clothing-item {
+  width: 960px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.clothing .clothing-content .clothing-item .clothing-item-box {
+  width: 240px;
+  height: 305px;
+}
+
+.clothing-item-box a {
+  width: 100%;
+  height: 100%;
+  padding: 10px 21px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.clothing-item-box img {
+  width: 200px;
+  height: 180px;
+}
+
+.clothing-item-box p {
+  font-family: PingFangSC-Regular;
+  font-size: 16px;
+  color: #333333;
+  letter-spacing: 0;
+  line-height: 19px;
+  font-weight: 400;
+  /* 文本溢出显示省略号 */
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 200px;
+}
+
+.clothing-item-box .new {
+  font-family: PingFangSC-Regular;
+  font-style: italic;
+  font-weight: bold;
+  font-size: 16px;
+  color: #6b6b6b;
+  letter-spacing: 0;
+  line-height: 19px;
+  font-weight: 400;
+}
+
+.clothing-item-box .price {
+  font-family: PingFangSC-Regular;
+  font-size: 22px;
+  color: #AF2F22;
+  letter-spacing: 0;
+  font-weight: 400;
+}
+
+.clothing-item-box .price span {
+  font-size: 16px;
+}
+
+/* 1.7 最新专题模块 */
+.special {
+  height: 567px;
+  width: 1240px;
+  margin: 0 auto 40px;
+}
+
+.special .special-title {
+  height: 172px;
+  padding-top: 100px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.special .special-title h2 {
+  font-family: PingFangSC-Regular;
+  font-size: 30px;
+  color: #333333;
+  letter-spacing: 0;
+  font-weight: 400;
+}
+
+.special .special-title a {
+  font-family: PingFangSC-Regular;
+  font-size: 16px;
+  color: #A1A1A1;
+  letter-spacing: 0;
+  line-height: 22px;
+  font-weight: 400;
+}
+
+.special .special-content ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.special .special-content ul li img {
+  width: 405px;
+  height: 288px;
+}
+
+.special .special-content ul li .special-info {
+  width: 405px;
+  height: 67px;
+  padding: 0px 15px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.special .special-content ul li .special-info p {
+  font-family: PingFangSC-Regular;
+  font-size: 14px;
+  color: #666666;
+  letter-spacing: 0;
+  text-align: right;
+  font-weight: 400;
+}
+
+.special .special-content ul li .special-info p span {
+  margin-right: 15px;
+}

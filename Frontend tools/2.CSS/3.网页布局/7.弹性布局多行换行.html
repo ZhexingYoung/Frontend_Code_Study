@@ -22,12 +22,27 @@
   }
 
   .box .item {
-    flex: 1;
+    /* 1.方法一：使用flex属性 */
+    flex-grow: 0;
+    /* 不放大 */
+    flex-shrink: 0;
+    /* 不缩小 */
+    flex-basis: calc(16.66666% - 16px);
+    /* 基础宽度是一行的 1/6 减去 margin */
+
+    /* 3.方法三：使用width属性 */
+    /* width: calc(16.66666% - 16px); */
+    /* 宽度是一行的 1/6 减去 margin */
+
+    /* 2.方法二：使用max-width和min-width */
     max-width: calc(16.66666% - 16px);
+    /* 最大宽度是一行的 1/6 减去 margin */
     min-width: calc(16.66666% - 16px);
+    /* 最小宽度是一行的 1/6 减去 margin */
     height: 120px;
     background-color: pink;
     margin: 0 8px 16px;
+    /* 上下外边距为16px，左右外边距为8px */
   }
 </style>
 
