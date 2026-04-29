@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JS变量的本质</title>
+</head>
+
+<body>
+  <script>
+    // 1.变量的本质
+    // 1.1 变量的本质是一个容器，可以用来存储数据。临时存储在RAM内存中。
+
+    // 2.变量书写的规则
+    // 2.1 变量不能以关键字命名。
+    // 例如let，var，if，else，for，while，do，while，switch，case，break，continue，return，throw，try，catch，finally，function，class，extends，implements，interface，package，private，protected，public，static，this，super，new，delete，typeof，instanceof，in，of，等。
+
+    // 2.1 变量名必须以字母、下划线，数字组成，并且不能以数字开头。
+    // 比如 let 1num = 11
+    // 比如 let Nav-bar = 1 (用中划线连接)
+
+    // 2.2 变量名严格区分大小写。
+    let pink = 'pink';
+    let PINK = 'PINK';
+    console.log(pink, PINK);
+
+    // 3.变量命名的规范
+    // 3.1 变量名必须有意义。
+    // 比如 let username = '张三';
+
+    // 3.2 变量名必须符合小驼峰命名法。
+    // 多个单词组成，第一个单词首字母小写，其他单词首字母大写。比如userName
+
+    // 练习模块：
+    let userName = prompt('你的名字');
+    let userAge = prompt('你的年龄');
+    let userGender = prompt('你的性别');
+    document.write(userName, userAge, userGender);
+
+  </script>
+</body>
+
+</html>
