@@ -47,11 +47,14 @@
 
 /* 1.2 头部logo和导航栏 */
 .header {
+  position: sticky;
+  top: 0;
   background: #ffffff;
   height: 132px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  z-index: 999;
 }
 
 /* 1.2.1 头部logo */
@@ -110,6 +113,17 @@
 }
 
 /* 1.2.3 搜索栏 */
+.header .search {
+  position: relative;
+}
+
+.header .search .icon-search {
+  position: absolute;
+  color: #ccc;
+  top: 12px;
+  left: 3px;
+}
+
 .header .search input {
   width: 170px;
   height: 40px;
@@ -125,10 +139,27 @@
 }
 
 /* 1.2.4 购物车 */
+.header .cart {
+  position: relative;
+}
+
+.header .cart span {
+  position: absolute;
+  /* padding是为了故意撑大盒子留点font和盒子的空隙 */
+  padding: 2px 5px;
+  border-radius: 10px;
+  top: 1px;
+  /* 这里需要left，这样span变大也只会往右边移动 */
+  left: 20px;
+  background-color: #ff6f08;
+  color: #fff;
+}
+
 .header .cart i {
   font-size: 40px;
   margin-right: 20px;
 }
+
 
 /* 2.网页的底部 */
 /* 2.1 底部口号栏目 */

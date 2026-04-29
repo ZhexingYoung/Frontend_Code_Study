@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>定位布局-绝对定位</title>
+</head>
+<style>
+  .box {
+    position: relative;
+    width: 500px;
+    height: 500px;
+    background-color: pink;
+    margin: 0 auto;
+  }
+
+  .box1 {
+    width: 200px;
+    height: 200px;
+    background-color: rgb(179, 12, 188);
+  }
+
+  .box2 {
+    /* 1.绝对定位是相对于父元素进行定位的，会脱离文档流 */
+    /* 当父元素没有定位时，绝对定位会相对于浏览器进行定位 */
+    /* 当父元素有定位时，绝对定位会相对于父元素进行定位 */
+    position: absolute;
+    top: 100px;
+    left: 100px;
+
+    width: 200px;
+    height: 200px;
+    background-color: skyblue;
+  }
+</style>
+
+<body>
+  <div class="box">
+    <div class="box1"></div>
+    <div class="box2"></div>
+  </div>
+</body>
+
+</html>

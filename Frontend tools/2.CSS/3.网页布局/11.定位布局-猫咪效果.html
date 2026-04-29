@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>猫咪效果布局</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    ul,
+    li {
+      list-style: none;
+    }
+
+    .box {
+      overflow: hidden;
+      position: relative;
+      width: 1000px;
+      margin: 100px auto;
+    }
+
+    .box::before,
+    .box::after {
+      /* before 伪元素 属于行内元素，不能设置宽度和高度 ，但是加入绝对定位后，就可以设置宽度和高度了 */
+      position: absolute;
+      left: 0;
+      content: "";
+      width: 100%;
+      height: 100px;
+      background-color: rgb(255, 255, 255);
+      border-radius: 50%;
+    }
+
+    .box::before {
+      top: -50px;
+    }
+
+    .box::after {
+      bottom: -50px;
+    }
+
+    .box ul {
+      display: flex;
+      flex-wrap: nowrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 15px;
+      /* 水平方向滚动条 */
+      overflow-x: scroll;
+      /* 隐藏滚动条 */
+      scrollbar-width: none;
+      scroll-behavior: smooth;
+
+      /*谷歌浏览器，苹果浏览器兼容性写法 */
+      -webkit-scrollbar {
+        display: none;
+      }
+    }
+
+    .box ul li {
+      /* 不拉伸，不压缩，初始值200px */
+      flex: 0 0 200px;
+    }
+
+    .box ul li img {
+      display: block;
+      width: 100%;
+    }
+  </style>
+</head>
+
+
+<body>
+  <div class="box">
+    <ul>
+      <li>
+        <a href="#"><img src="./img/cat1.jpg" alt=""></a>
+      </li>
+      <li>
+        <a href="#"><img src="./img/cat2.jpg" alt=""></a>
+      </li>
+      <li>
+        <a href="#"><img src="./img/cat3.jpg" alt=""></a>
+      </li>
+      <li>
+        <a href="#"><img src="./img/cat4.jpg" alt=""></a>
+      </li>
+      <li>
+        <a href="#"><img src="./img/cat5.jpg" alt=""></a>
+      </li>
+      <li>
+        <a href="#"><img src="./img/cat6.jpg" alt=""></a>
+      </li>
+      <li>
+        <a href="#"><img src="./img/cat7.jpg" alt=""></a>
+      </li>
+      <li>
+        <a href="#"><img src="./img/cat8.jpeg" alt=""></a>
+      </li>
+      <li>
+        <a href="#"><img src="./img/cat9.jpeg" alt=""></a>
+      </li>
+      <li>
+        <a href="#"><img src="./img/cat10.jpeg" alt=""></a>
+      </li>
+      <li>
+        <a href="#"><img src="./img/cat11.jpeg" alt=""></a>
+      </li>
+      <li>
+        <a href="#"><img src="./img/cat12.jpeg" alt=""></a>
+      </li>
+    </ul>
+  </div>
+</body>
+
+</html>
