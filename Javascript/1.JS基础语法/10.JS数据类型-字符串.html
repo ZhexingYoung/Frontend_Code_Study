@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JS数据类型-字符串</title>
+</head>
+
+<body>
+  <script>
+    let str = 'Hello World';
+    let str2 = "Hello World";
+    let str3 = `Hello World`;
+    let strE = '';//空字符串
+    // 输出引号
+    let strQ = '\'Hello World\'';
+    console.log(strQ);
+    let strQ2 = '"Hello World"';
+    console.log(strQ2);
+
+
+    console.log(str, str2, str3);
+
+    // 字符串的拼接
+    let name = '张三';
+    let age = 18;
+    let gender = '男';
+    let str4 = '我叫' + name + '，我今年' + age + '岁，我是一个' + gender + '人';
+    console.log(str4);
+
+    // 模板字符串 
+    // 模板字符串是使用反引号（`）包裹的字符串，可以使用${}插入变量。
+    let str5 = `我叫${name}，我今年${age}岁，我是一个${gender}人`;
+    console.log(str5);
+
+    // 练习案例
+    let userName = prompt('请输入姓名');
+    let userAge = prompt('请输入年龄');
+
+    document.write(`我叫${userName},我今年${userAge}岁`);
+  </script>
+</body>
+
+</html>

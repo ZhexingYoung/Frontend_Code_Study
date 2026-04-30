@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JS数据类型-布尔,空,未定义</title>
+</head>
+
+<body>
+  <script>
+    // 布尔值类型
+    let bool1 = (3 > 0);//true
+    console.log(bool1);
+    let bool = true;
+    console.log(bool);
+
+    // 空值类型 表示赋值了，是个对象，但是内容是空的（是个空对象）
+    let empty = null;
+    console.log(empty);
+
+    // 未定义值类型
+    let undefined1;
+    console.log(undefined1);
+    console.log(typeof undefined1);//undefined
+
+    let undefined2 = undefined;
+    console.log(undefined2);
+    console.log(undefined1 === undefined2);//true
+
+    // 计算有区别
+    console.log(undefined1 + 1);//NaN
+    console.log(null + 1);//1
+
+    //检测数据类型 作为运算符
+    console.log(typeof bool1);//boolean
+    console.log(typeof empty);//object
+    console.log(typeof undefined1);//undefined
+    console.log(typeof undefined2);//undefined
+    // 作为函数
+    console.log(bool1());//true
+    console.log(empty());//null
+    console.log(undefined1());//undefined
+    console.log(undefined2());//undefined
+
+
+  </script>
+</body>
+
+</html>

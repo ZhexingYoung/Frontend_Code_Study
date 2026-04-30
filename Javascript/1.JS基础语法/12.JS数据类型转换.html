@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JS数据类型转换</title>
+</head>
+
+<body>
+  <script>
+    // 数据类型转换
+    // 1. 显式转换  
+    // 字符串转数字（Number()）
+    let str = '10';
+    console.log(Number(str));
+    console.log(typeof Number(str));//number
+    // 只保留整数
+    console.log(parseInt('12.33px'));//12
+    console.log(typeof parseInt('12px'));//number
+    // 保留小数
+    console.log(Number.parseFloat('12.33px'));//12.33
+    console.log(typeof Number.parseFloat('12.33px'));//number
+
+    // 数字转字符串（toString()）
+    let num = 10;
+    console.log(String(num));
+    console.log(typeof String(num));//string
+
+    // 2. 隐式转换 
+    //1.1 任何数据用 + 和字符串拼接会把数字和字符串进行拼接，结果是字符串
+    console.log('pink' + 1);//pink1
+    console.log(1 + '2' + 1);//121
+    console.log(1 + '2');//12 
+
+    //1.2 (特殊) +号会把字符串转换为数字，结果是数字
+    console.log(+'123');//123
+
+    //2. - / * 号会把字符串转换为数字，结果是数字
+    console.log('10' - 1);//9
+    console.log(10 - '1');//9
+    console.log('10' - '1');//9
+
+    // 练习案例 计算两个数的和 (显形)
+    let num1 = prompt('请输入第一个数');
+    let num2 = prompt('请输入第二个数');
+    // 也可以直接隐性转换
+    // let num1 = +prompt('请输入第一个数');
+    // let num2 = +prompt('请输入第二个数');
+    num1 = Number(num1);
+    num2 = Number(num2);
+    document.write(`两个数的和为：${num1 + num2}`);
+
+
+  </script>
+</body>
+
+</html>
