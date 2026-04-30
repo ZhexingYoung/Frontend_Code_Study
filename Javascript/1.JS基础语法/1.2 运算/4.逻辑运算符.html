@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>逻辑运算符</title>
+</head>
+
+<body>
+  <script>
+    // 逻辑运算符
+    let a = 10;
+    let b = 20;
+    let c = 30;
+    // 逻辑与运算符 &&：并且（与）  只有当两个操作数都为true时，结果为true，否则为false
+    console.log(a > b && b < c);//false
+    // 逻辑或运算符 ||：或者（或）  只要有一个操作数为true，结果为true，否则为false
+    console.log(a > b || b < c);//true
+    // 逻辑非运算符 !：取反（非）  取反操作数的逻辑值
+    console.log(!a);//false
+    console.log(!b);//true
+
+    //案例练习
+    let num = prompt('请输入一个数字');
+    let D = num % 4;
+    let E = num % 100;
+    alert(D === 0 && E !== 0);
+  </script>
+</body>
+
+</html>

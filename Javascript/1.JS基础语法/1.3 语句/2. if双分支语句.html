@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>if双分支语句</title>
+</head>
+
+<body>
+  <script>
+    // 1.判断语句
+    // 1.2 if双分支语句
+
+    // if (条件) {
+    //   满足条件要执行的代码
+    // } else {
+    //   不满足条件要执行的代码
+    // }
+
+    //练习案例
+    let year = prompt('请输入年份');
+
+    if (year % 4 === 0 && year % 100 !== 0 || year % 400 === 0) {
+      alert(`${year} 是闰年`);
+    } else {
+      alert(`${year} 不是闰年`);
+    }
+
+
+
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>比较运算符</title>
+</head>
+
+<body>
+  <script>
+    // 比较运算符
+    let a = 10;
+    let b = 20;
+    let c = 10
+    console.log(a > b);//false
+    console.log(a < b);//true
+    console.log(a >= b);//false
+    console.log(a <= b);//true
+    console.log(a >= c);//true
+    console.log(a <= c);//true
+
+    // == 等于运算符 只比较值，不比较类型
+    let A = 10;
+    let B = '10';
+    let C = '20';
+    console.log(A == B);//true
+    console.log(A == C);//false
+    console.log(typeof C);//string
+
+    // === 等于等于运算符 比较值和类型
+    console.log(A === B);//false
+    console.log(typeof B);//string
+    console.log(NaN === NaN);//false  NaN 不等于任何值，包括它自己
+    //字符串比较，是比较字符串的ASCII码值
+    console.log('a' > 'b');//false
+    console.log('aa' < 'ab');//true
+
+
+    // != 不等于运算符 比较值，不比较类型
+    // !== 不等于运算符 比较值和类型
+    console.log(A !== B);//true
+    console.log(A !== C);//false
+
+  </script>
+</body>
+
+</html>
