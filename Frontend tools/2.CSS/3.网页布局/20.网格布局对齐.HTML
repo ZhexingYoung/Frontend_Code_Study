@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>网格布局对齐</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    .box {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(3, 1fr);
+      width: 800px;
+      height: 800px;
+      grid-gap: 10px;
+      margin: 0 auto;
+      /* 对齐项目到网格中心(需要写到网格容器上) */
+      /* 需要子项目大小比网格容器小，才能居中 */
+      /* 这个是水平居中 */
+      justify-items: center;
+      /* 这个是垂直居中 */
+      align-items: center;
+      border: 1px solid #000;
+    }
+
+    .item {
+      width: 200px;
+      height: 200px;
+      background-color: pink;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box">
+    <div class="item">
+    </div>
+    <div class="item">
+    </div>
+    <div class="item">
+    </div>
+    <div class="item">
+    </div>
+    <div class="item">
+    </div>
+    <div class="item">
+    </div>
+    <div class="item">
+    </div>
+    <div class="item">
+    </div>
+    <div class="item">
+    </div>
+  </div>
+</body>
+
+</html>
