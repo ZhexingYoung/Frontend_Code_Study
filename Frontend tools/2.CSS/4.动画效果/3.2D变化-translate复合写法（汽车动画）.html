@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>汽车动画-translate复合写法</title>
+  <style>
+    .box {
+      position: relative;
+      width: 1500px;
+      height: 500px;
+      border: 1px solid #000;
+      margin: auto;
+    }
+
+    .carbox {
+      position: absolute;
+      top: 50%;
+      right: 0px;
+      width: 400px;
+      transform: translate(0, -50%);
+      height: 250px;
+
+    }
+
+    .car {
+      position: absolute;
+      /* 居中对齐 */
+      top: calc(50% - 69px);
+      width: 100%;
+    }
+
+    .carbox .wheel1 {
+      position: absolute;
+      top: 132px;
+      right: 76px;
+      width: 53px;
+    }
+
+    .carbox .wheel2 {
+      position: absolute;
+      top: 132px;
+      right: 289px;
+      width: 53px;
+    }
+
+    .carbox:hover .car {
+      transform: translate(-1100px, 0);
+      transition: all 2s ease-in-out;
+    }
+
+    .carbox:hover .wheel1 {
+      transform: rotate(360deg);
+      transform: translate(-1100px, 0) rotate(-720deg);
+      transition: all 2s ease-in-out;
+    }
+
+    .carbox:hover .wheel2 {
+      transform: translate(-1100px, 0) rotate(-720deg);
+      transition: all 2s ease-in-out;
+    }
+  </style>
+
+</head>
+
+<body>
+  <div class="box">
+    <div class="carbox">
+      <img src="./img/car.webp" alt="" class="car">
+      <img src="./img/wj.webp" alt="" class="wheel1">
+      <img src="./img/wj.webp" alt="" class="wheel2">
+    </div>
+  </div>
+</body>
+
+</html>

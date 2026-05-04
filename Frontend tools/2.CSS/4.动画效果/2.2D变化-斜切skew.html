@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>斜切skew</title>
+  <style>
+    .box {
+      width: 200px;
+      height: 55px;
+      color: #fff;
+      background-color: pink;
+      text-align: center;
+      line-height: 55px;
+      transform: skewX(-16deg);
+      border: 2px solid transparent;
+      transition: all 1s;
+    }
+
+    .box:hover {
+      border: 2px solid pink;
+      background-color: #fff;
+      color: pink;
+      transform: skewX(-20deg);
+
+    }
+
+    /* 案例效果css*/
+    .card {
+      width: 240px;
+      height: 280px;
+      margin: 50px;
+      position: relative;
+    }
+
+    .card div {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 240px;
+      height: 280px;
+      border-radius: 0 30px 40px 40px;
+      transform-origin: top left;
+      transition: all 0.5s;
+    }
+
+    .front {
+      backdrop-filter: blur(15px);
+      z-index: 1;
+      background-color: rgba(255, 255, 255, 0.5);
+    }
+
+    .back {
+      background: linear-gradient(180deg, rgb(9, 132, 255), purple);
+      transform: skewY(8deg);
+    }
+
+    /* 鼠标经过card里的back的倾斜变大  */
+    .card:hover .back {
+      transform: skewY(12deg);
+      transform: skewY(12deg) scale(0.85, 1);
+    }
+
+    .card:hover .front {
+      transform: translateY(-2px);
+    }
+  </style>
+
+
+
+</head>
+
+<body>
+  <div class="box">英雄联盟</div>
+
+
+  <!-- 案例效果 -->
+  <div class="card">
+    <div class="front"></div>
+    <div class="back"> </div>
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>3D变化-变化和透视</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #ccc;
+    }
+
+    .box {
+      position: relative;
+      width: 300px;
+      height: 450px;
+      margin: 100px auto;
+      perspective: 1000px;
+    }
+
+    .box>div {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: 10px;
+      text-align: center;
+      color: #fff;
+      transition: all 2s;
+      backface-visibility: hidden;
+      /* 3D变化-变化和透视 */
+      transform-style: preserve-3d;
+
+    }
+
+    .box>div>p {
+      display: block;
+      width: 100%;
+      height: 100%;
+      line-height: 450px;
+      font-size: 30px;
+      transform: translateZ(100px);
+      backface-visibility: hidden;
+    }
+
+    .box .front {
+      background: linear-gradient(45deg, pink, rgb(235, 135, 135));
+      transform: rotateY(0deg);
+
+    }
+
+    .box:hover .front {
+      transform: rotateY(180deg);
+    }
+
+    .box .back {
+      background: linear-gradient(45deg, skyblue, rgb(81, 65, 221));
+      transform: rotateY(180deg);
+    }
+
+
+    .box:hover .back {
+      transform: rotateY(360deg);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box">
+    <div class="front">
+      <p>前面</p>
+    </div>
+    <div class="back">
+      <p>后面</p>
+    </div>
+  </div>
+</body>
+
+</html>

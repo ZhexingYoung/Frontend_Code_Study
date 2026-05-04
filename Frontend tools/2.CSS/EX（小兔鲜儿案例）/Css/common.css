@@ -24,6 +24,15 @@
   background-color: #999;
 }
 
+
+.shortcut .phone:hover i {
+  display: inline-block;
+  transform: rotate(360deg);
+  transition: all 1s;
+}
+
+
+
 .shortcut li .iconfont {
   font-size: 20px;
   margin-right: 10px;
