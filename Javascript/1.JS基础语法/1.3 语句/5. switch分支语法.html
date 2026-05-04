@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>switch分支语法</title>
+</head>
+
+<body>
+  <script>
+    // switch分支语法
+    // 语法: switch(变量名){
+    //   case 值1:
+    //     代码块;
+    //     break;
+    //   case 值2:
+    //     代码块;
+    //     break;
+    //   default:
+    //     代码块;
+    // }
+    // 主要用于判断变量的值是否等于多个固定值,数据类型和值都要匹配
+    // 说明: 如果变量的值等于case后的值，执行case后的代码块，否则执行default后的代码块
+    let operator = prompt('请输入预算符');
+    let num1 = prompt('请输入第一个数字');
+    let num2 = prompt('请输入第二个数字');
+    switch (operator) {
+      case '+':
+        alert(`结果是${num1 + num2}`);
+        break;//退出switch语句
+      case '-':
+        alert(`结果是${num1 - num2}`);
+        break;//退出switch语句  
+      case '*':
+        alert(`结果是${num1 * num2}`);
+        break;//退出switch语句
+      default:
+        alert(`结果是${num1 / num2}`);
+    }
+
+  </script>
+</body>
+
+</html>

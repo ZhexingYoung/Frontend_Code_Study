@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>银行案例判断语句</title>
+
+</head>
+
+<body>
+  <script>
+    // 操作页面
+    let str
+    let money = 1000;
+
+    //第一次显示菜单
+
+    while (str !== 4) {
+      str = +prompt('请输入你想进行的操作\n1.取钱\n2.存钱\n3.查询余额\n4.退出');
+
+      switch (str) {
+        case 1:
+          let withdraw = +prompt('请输入你想取的钱数');
+          if (withdraw > money) {
+            alert('余额不足');
+          }
+          else {
+            money = money - withdraw;
+            alert(`成功取钱${withdraw},你的余额是${money}`);
+          }
+          break;
+
+        case 2:
+          let deposit = +prompt('请输入你想存的钱数');
+          money = money + deposit;
+          alert(`成功存钱${deposit},你的余额是${money}`);
+          break;
+
+        case 3:
+          alert(`你的余额是${money}`);
+          break;
+
+        case 4:
+          alert('谢谢使用');
+          break;
+
+        default:
+          alert('请输入正确的代码');
+          break;
+      }
+    }
+  </script>
+</body>
+
+</html>

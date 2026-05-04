@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Documentcontinue+break语句</title>
+
+</head>
+
+<body>
+  <script>
+    // 1.continue语句
+    // continue语句用于跳过当前循环中的剩余代码，继续执行下一次循环。
+    // 例如：
+    let i = 0;
+    while (i < 10) {
+      i++;
+      if (i === 3) {
+        // 当i等于3时，跳过当前循环，回到while循环的开头，继续执行下一次循环。
+        continue;
+      }
+      document.write(i + '<br>');
+    }
+
+    // 2.break语句
+    // break语句用于跳出循环。
+    // 例如：
+    let j = 0;
+    while (j < 10) {
+      j++;
+      // 当j等于5时，跳出while循环。
+      if (j === 5) {
+        break;
+      }
+      document.write(j + '<br>');
+    }
+    //练习案例：
+    let str = prompt('你爱我吗');
+    while (str !== '爱'
+    ) {
+      str = prompt('你爱我吗');
+      if (str === '爱') {
+        break;
+      }
+    }
+
+
+
+  </script>
+</body>
+
+</html>

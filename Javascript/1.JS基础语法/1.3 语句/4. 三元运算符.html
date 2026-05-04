@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>三元运算符</title>
+</head>
+
+<body>
+  <script>
+    // 三元运算符,比if语句更简洁
+    // 语法: 条件 ? 满足条件的代码: 不满足条件的代码;
+    // 说明: 如果条件为true，执行满足条件的代码，否则执行不满足条件的代码
+
+    // 练习案例
+    let num1 = prompt('请输入一个数字');
+    let num2 = prompt('请输入另一个数字');
+
+    num1 > num2 ? alert(`两个数最大的是${num1}`) : alert(`两个数最大的是${num2}`);
+
+    //练习案例2 补零
+    let num = prompt('请输入一个数字');
+    //  如果num小于10,则在num前面补0,否则不补0 ，并重新赋值给num
+    num = num < 10 ? 0 + num : num;
+    alert(num);
+
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>if多分支语句</title>
+</head>
+
+<body>
+
+</body>
+<script>
+  // 1.if多分支语句
+  // 1.1 语法
+  // if(条件){
+  //   代码块
+  // }else if(条件){
+  //   代码块
+  // }else{
+  //   代码块
+  // }
+  let score = prompt('请输入你的成绩');
+
+  if (score >= 90) {
+    alert(`你的成绩是${score},学术结果是优秀`);
+  }
+  else if (score >= 80 && score < 90) {
+    alert(`你的成绩是${score},学术结果是良好`);
+  }
+  else if (score >= 60 && score < 80) {
+    alert(`你的成绩是${score}, 学术结果是及格`);
+  }
+
+  else {
+    alert(`你的成绩是${score}, 学术结果是不及格`);
+  }
+
+
+</script>
+
+</html>

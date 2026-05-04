@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>while循环练习</title>
+</head>
+
+<body>
+  <script>
+    let num1 = 1;
+    while (num1 <= 100) {
+      document.write(num1 + '<br>');
+      num1++;
+    }
+    // 练习模块2: 1-100的和
+    let num2 = 0;
+    let i = 1;
+    while (i <= 100) {
+      num2 = num2 + i;
+      i++;
+    }
+    document.write(num2 + '<br>');
+
+    //练习3
+    let num3 = 0
+    let j = 1;
+    while (j <= 100) {
+      if (j % 2 == 0) {
+        num3 = num3 + j;
+        j++;
+      }
+      else {
+        j++;
+      }
+    }
+    document.write(num3 + '<br>');
+  </script>
+</body>
+
+</html>
