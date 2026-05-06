@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Animation 基础语法</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+            margin: 50px auto;
+
+            /* 使用动画的语法：
+            animation: name duration timing-function delay iteration-count direction fill-mode play-state; 
+            animation：动画名称，动画持续时间，动画函数，延迟时间，播放次数，播放方向，填充模式，播放状态
+            含义：
+            name：动画的名称，用于在 @keyframes 规则中引用。
+            duration：动画的持续时间，单位为秒。
+            timing-function：动画的动画函数，用于定义动画的播放速度。
+            delay：动画的延迟时间，单位为秒。
+            iteration-count：动画的播放次数，infinite 表示无限播放。
+            direction：动画的播放方向，normal 表示正向播放，alternate 表示反向播放。
+            fill-mode：动画播放结束时的填充模式，forwards 表示保持最后一帧的状态，backwards 表示保持第一帧的状态。
+            play-state：动画的播放状态，running 表示正在播放，paused 表示暂停播放。*/
+            animation: slide 2s infinite;
+        }
+
+        /* 定义滑动动画，使盒子在水平方向上来回移动 */
+        @keyframes slide {
+            0% {
+                transform: translateX(0);
+            }
+
+            50% {
+                transform: translateX(200px);
+            }
+
+            100% {
+                transform: translateX(0);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <h1>CSS Animation 基础语法示例</h1>
+    <p>这个盒子使用了 animation 属性和 @keyframes 规则来创建滑动动画。</p>
+    <div class="box"></div>
+    <p>语法：<br>
+        animation: name duration timing-function delay iteration-count direction fill-mode play-state;</p>
+</body>
+
+</html>

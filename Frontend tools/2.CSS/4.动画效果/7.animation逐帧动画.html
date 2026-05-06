@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>animation逐帧动画</title>
+  <style>
+    html,
+    body {
+      width: 100%;
+      height: 100%;
+    }
+
+    body {
+      position: fixed;
+      background: url(./img/bg2.png) no-repeat center/cover;
+    }
+
+    .box {
+      width: 548px;
+      height: 513px;
+      background-color: pink;
+      margin: 200px;
+      background: url(./img/step.png) no-repeat;
+      background-size: 13700px 513px;
+
+      /* 1.动画名称 */
+      /* steps(25) 25帧动画,在1秒内完成25帧动画，infinite 无限循环播放 */
+      animation: move 1s steps(25) infinite;
+    }
+
+    @keyframes move {
+      0% {
+        background-position: 0 0;
+      }
+
+      100% {
+        background-position: -13700px 0;
+      }
+    }
+  </style>
+</head>
+<div class="box"></div>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>彩色按钮边框</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    html,
+    body {
+      width: 100%;
+      height: 100%;
+      background-color: #c1c1c1;
+    }
+
+    .box {
+      overflow: hidden;
+      border-radius: 10px;
+
+      /* 按钮边框宽度,通过padding来实现边框 */
+      padding: 7px;
+      position: relative;
+      display: block;
+      margin: 0 auto;
+      width: 300px;
+      height: 150px;
+      background-color: #fff;
+      margin: 200px auto;
+    }
+
+    .box::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 200%;
+      height: 100%;
+      background: linear-gradient(120deg, #4fcf70, #fad648, #a767e5, #12bcfe, #44ce7b);
+      /* 这里background-size: 50% 100%; 水平方向上是50%，可以放两次，垂直方向上是100%，所以背景会重复两次 */
+      background-size: 50% 100%;
+      animation: colorMove .75s linear infinite;
+    }
+
+    .box span {
+      position: relative;
+      display: block;
+      width: 100%;
+      height: 100%;
+      line-height: 143px;
+      text-align: center;
+      font-size: 30px;
+      color: #fff;
+      background-color: #000000;
+      border-radius: 10px;
+    }
+
+    @keyframes colorMove {
+      0% {
+        background-position: 0% 0%;
+      }
+
+      100% {
+        background-position: -100% 0%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <a href="" class="box">
+    <span>点击我</span>
+  </a>
+</body>
+
+
+
+
+</html>

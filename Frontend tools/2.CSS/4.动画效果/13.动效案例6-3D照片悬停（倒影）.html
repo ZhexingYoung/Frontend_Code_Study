@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>3D照片悬停-倒影</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      height: 100%;
+    }
+
+    body {
+      background-color: #1a252c;
+      text-align: center;
+    }
+
+    .box {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      margin: 200px auto;
+      perspective: 500px;
+    }
+
+    .box .item {
+      width: 120px;
+      height: 120px;
+      margin: 0 2px;
+      /* 这句话的意思是：鼠标悬停在图片上，会显示指针 */
+      cursor: pointer;
+      /* 这句话的意思是：会显示倒影 */
+      -webkit-box-reflect: below 1px linear-gradient(transparent, rgba(0, 0, 0, 0.2));
+      transition: all 0.3s ease-in-out;
+    }
+
+    .box .item img {
+      width: 100%;
+      height: 100%;
+      border-radius: 5px;
+    }
+
+    .box .item:hover {
+      transform: scale(1.2);
+      z-index: 1;
+    }
+
+    /* 当鼠标经过box的时候，其他图片会旋转，当前盒子不回 */
+    .box:hover .item:not(:hover) {
+      transform: scale(0.9) rotateY(45deg);
+      margin: 0 -10px;
+    }
+
+    /* 这个是后兄弟选择器，意思是指：当鼠标悬停在图片上时，会旋转图片的后面的兄弟元素 */
+    .box .item:hover~.item {
+      transform: scale(0.9) rotateY(-45deg);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box">
+    <div class="item"><img src="./img/1.png" alt=""></div>
+    <div class="item"><img src="./img/2.png" alt=""></div>
+    <div class="item"><img src="./img/3.png" alt=""></div>
+    <div class="item"><img src="./img/4.png" alt=""></div>
+    <div class="item"><img src="./img/5.png" alt=""></div>
+  </div>
+</body>
+
+</html>
