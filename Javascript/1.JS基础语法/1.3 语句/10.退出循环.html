@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>退出循环</title>
+</head>
+
+<body>
+  <script>
+    // 退出循环
+    for (let i = 0; i < 10; i++) {
+      if (i === 5) {
+        continue;//跳过当前循环，本次循环中后面的代码不执行，继续下一次循环
+      }
+      document.write(i + '<br>');
+    }
+
+    for (let j = 0; j < 10; j++) {
+      if (j === 5) {
+        break;//直接退出for循环
+      }
+      document.write(j + '<br>');
+    }
+
+    //无限循环: while(true) 或 for(; ;)
+
+    // while (true) {
+    //   document.write('hello world' + '<br>');
+    //    break;//退出while循环
+    // }
+
+  
+    // for (; ;) {
+    //   document.write('hello world' + '<br>');
+    // }
+    //退出for循环
+
+    //一般明确多少次的时候用for循环，不明确多少次的时候用while循环
+  </script>
+</body>
+
+</html>

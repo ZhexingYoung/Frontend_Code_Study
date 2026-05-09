@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>数组操作-改</title>
+</head>
+
+<body>
+  <script>
+    // 1.数组操作-改数组
+    // 1.1 改数组的元素
+    let arr1 = []
+    console.log(arr1[0]);//undefined
+    console.log(arr1);//[]
+
+    arr1[0] = 1
+    console.log(arr1);//[1]
+    console.log(arr1[0]);//1
+
+    arr1[1] = 2
+    console.log(arr1);//[1, 2]
+    console.log(arr1[1]);//2
+
+
+    // 1.2 改数组的元素-遍历数组
+    let arr2 = ['pink', 'red', 'green']
+    for (let i = 0; i < arr2.length; i++) {
+      arr2[i] = arr2[i] + '老师'
+    }
+    console.log(arr2);
+  </script>
+</body>
+
+</html>

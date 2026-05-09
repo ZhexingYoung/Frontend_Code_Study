@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>数组操作-删</title>
+</head>
+
+<body>
+  <script>
+    //1.删除数组中的最后一个元素，返回删除的元素值
+    let arr2 = [2, 0, 6, 1, 77, 0, 52, 0, 25, 7]
+    let num = arr2.pop()
+    console.log(arr2);//[2, 0, 6, 1, 77, 0, 52, 0, 25]
+    console.log(num);//7
+    console.log(arr2.length);//8
+
+    //2.删除数组中的第一个元素，返回删除的元素值
+    let num2 = arr2.shift()
+    console.log(arr2);//[6, 1, 77, 0, 52, 0, 25]
+    console.log(num2);//2
+    console.log(arr2.length);//7
+
+    //3.删除数组中的指定元素，返回删除的元素值
+    //语法：arr.splice(起始位置-索引号, 删除的个数)
+    let arr3 = [2, 0, 6, 1, 77, 0, 52, 0, 25, 7]
+    let num3 = arr3.splice(2, 2)
+    console.log(arr3);//[2, 0, 77, 0, 52, 0, 25, 7]
+    console.log(num3);//[6, 1]
+    console.log(arr3.length);//8
+  </script>
+</body>
+
+</html>

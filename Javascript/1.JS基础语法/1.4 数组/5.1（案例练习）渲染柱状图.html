@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>渲染柱状图</title>
+</head>
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  ul,
+  li {
+    list-style: none;
+  }
+
+  .box {
+    width: 600px;
+    height: 400px;
+    margin: 30px auto;
+    /* 顶部和右侧没有边框，底部和左侧有边框 */
+    border: 1px solid pink;
+  }
+
+  ul {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-end;
+  }
+
+  li {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 20px;
+    height: 50px;
+    background-color: pink;
+  }
+
+  span {
+    transform: translateY(-30%);
+    transform-origin: center center;
+    display: block;
+    text-align: center;
+    margin-top: -20px;
+    font-size: 12px;
+    font-weight: bold;
+    color: #000000;
+  }
+
+  p {
+    display: block;
+    white-space: nowrap;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    color: #000000;
+    transform: translateY(35px);
+  }
+</style>
+
+<body>
+  </div>
+
+  <script>
+    // 1. 四次输入
+    let arr = [];
+    for (let i = 0; i < 4; i++) {
+      arr.push(+prompt(`请输入第${i + 1}季度的销售额`));
+    }
+    console.log(arr);
+
+    //盒子开头
+    document.write('<div class="box"><ul class="chart">');
+    // 渲染柱状图
+    for (let i = 0; i < arr.length; i++) {
+      document.write(`<li style="height: ${arr[i]}px;" class="item${i + 1} "><span>${arr[i]}</span>
+        <p>第${i + 1}季度</p>
+      </li>`)
+    }
+    document.write('</ul></div>');
+  </script>
+</body>
+
+</html>

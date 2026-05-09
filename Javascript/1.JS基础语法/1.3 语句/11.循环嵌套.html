@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>循环嵌套</title>
+</head>
+<style>
+  span {
+    display: inline-block;
+    padding: 0 3px;
+    border: 2px solid pink;
+    box-shadow: 0 0 5px 0.4px pink;
+    height: 20px;
+    width: 100px;
+    color: hotpink;
+    text-align: center;
+    margin: 2px 3px;
+  }
+</style>
+
+<body>
+  <script>
+    // 循环嵌套
+    //for(外部声明记录循环次数的变量;外部循环条件;变化量){
+    //  for(内部声明记录循环次数的变量;内部循环条件;变化量){
+    //    循环体
+    //  }
+    // }
+
+    // 外部巡逻
+    for (let i = 1; i <= 3; i++) {
+      //外层循环打印天数
+      document.write(`第${i}天<br>`)
+      //内层循环
+      for (let j = 1; j <= 5; j++) {
+        //内层循环打印单词数
+        document.write(`记住第${j}个单词<br>`);
+      }
+    }
+
+    //练习模块1:
+    let row = +prompt('请输入行数');
+    let col = +prompt('请输入列数');
+    for (let k = 1; k <= row; k++) {
+      for (let l = 1; l <= col; l++) {
+        document.write(`🌟`);
+      }
+      document.write('<br>');
+    }
+
+    //练习模块2:
+    // let row1 = +prompt('请输入行数1');
+    // let col1 = +prompt('请输入列数1');
+    // for (let r = 1; r <= row1; r++) {
+    //   for (let c = 1; c <= col1; c++) {
+    //     c = c / 2;
+    //     document.write(`🌟`);
+    //   }
+    //   document.write('<br>');
+    // }
+
+    //练习模块3: 乘法表
+    let row2 = +prompt('请输入行数1');
+    let col2 = +prompt('请输入列数1');
+    for (let r2 = 1; r2 <= row2; r2++) {
+      for (let c2 = 1; c2 <= r2; c2++) {
+        document.write(`<span>${c2}*${r2}=${r2 * c2}</span>`);
+      }
+      document.write('<br>');
+    }
+  </script>
+</body>
+
+</html>

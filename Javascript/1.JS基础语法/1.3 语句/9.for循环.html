@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    //  for循环的格式：
+    //  for(初始化表达式;条件表达式;更新表达式){
+    //    循环体代码
+    //  }
+
+    // 1.初始化表达式：在循环开始前执行一次，用于初始化循环变量。
+    // 2.条件表达式：在每次循环前执行，用于判断是否继续循环。
+    // 3.更新表达式：在每次循环后执行，用于更新循环变量。
+    // for (let i = 1; i <= 3; i++) {
+    //   document.write('月薪过万\n')
+    // }
+
+    // 练习模块1: 
+    for (let i = 1; i <= 100; i++) {
+      document.write(`我今年${i}岁<br>`);
+    }
+    // 练习模块2: 
+    let sum = 0;
+    for (let i = 0; i <= 100; i++) {
+      if (i % 2 === 0) {
+        sum = sum + i
+      }
+    }
+    document.write(sum + '<br>');
+
+    // 练习模块3: 
+    let array = [1, 2, 3, 4, 5];
+    for (let i = 0; i < array.length; i++) {
+      document.write(array[i] + '<br>');
+    }
+
+  </script>
+</body>
+
+</html>

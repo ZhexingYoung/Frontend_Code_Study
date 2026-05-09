@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>数组基本使用</title>
+</head>
+
+<body>
+  <script>
+    // 1.数组的声明
+    // 1.1 数组字面量
+    // let arr = [1, 2, 3, 4, true, 'hello', [1, 2, 3]];
+    //1.2 使用构造函数
+    // let arr2 = new Array(1, 2, 3, 4, 5);
+
+    //2.数组的取值 
+    let num = [0, 1, 2, 3, 4, 5, 6]
+    num[0]//取数组的第一个元素
+    console.log(num);
+
+    //3.数组的遍历 
+    for (let i = 0; i < num.length; i++) {
+      console.log(num[i]);
+    }
+
+    //4.数组的求和
+    let sum = 0;
+    let arr1 = [2, 6, 1, 7, 4]
+    for (let i = 0; i < arr1.length; i++) {
+      sum += arr1[i];
+    }
+    console.log(sum / arr1.length);
+  </script>
+</body>
+
+</html>

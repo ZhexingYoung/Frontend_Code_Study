@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>数组操作-增</title>
+</head>
+
+<body>
+  <script>
+    // 1.数组操作-增数组
+    // 1.1 数组的元素
+    let arr = ['pink', 'red', 'green']
+    // 1.1.1 数组的元素-增-在数组末尾添加一个元素
+    arr.push('blue')
+    console.log(arr.push('blue'));//4：会返回数组的新长度
+    console.log(arr);//['pink', 'red', 'green', 'blue']
+    console.log(arr[3]);//blue
+
+    // 1.1.2 数组的元素-增-在数组开头添加一个元素
+    arr.unshift('orange')
+    console.log(arr.unshift('orange'));//5：会返回数组的新长度
+    console.log(arr);//['orange', 'pink', 'red', 'green', 'blue']
+    console.log(arr[0]);//orange
+  </script>
+</body>
+
+</html>
