@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>布尔型转换</title>
+</head>
+
+<body>
+  <script>
+    //布尔型转换
+    //数字
+    console.log(Boolean(1)) //true
+    console.log(Boolean(0)) //false
+    console.log(Boolean(10)) //true
+
+    //字符串
+    console.log(Boolean('')) //false
+    console.log(Boolean('pink')) //true
+
+    //特殊
+    console.log(Boolean(null)) //false
+    console.log(Boolean(undefined)) //false
+    console.log(Boolean(NaN)) //false
+    console.log(Boolean(Infinity)) //true
+
+    //布尔
+    console.log(Boolean(false)) //false
+    console.log(Boolean(true)) //true
+
+
+    //2. 隐式转换
+    console.log(+'2') //2
+    console.log(-'') //0
+    console.log(Number(null)) //0
+    console.log(Number(undefined)) //NaN 
+  </script>
+</body>
+
+</html>

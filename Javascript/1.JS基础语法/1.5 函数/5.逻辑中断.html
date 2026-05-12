@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>逻辑中断</title>
+</head>
+
+<body>
+  <script>
+    //逻辑中断
+    console.log(1 && 2) //都是真，返回最后一个真的值
+    //如果都是第一个为false直接终止不看后面，因为或预算一假则假
+    console.log(1 || 2) //都是真，返回第一个真的值
+    //如果都是第一个为true直接终止不看后面，因为或预算一真则真
+
+    //案例
+    function fn(x, y) {
+      x = x || 0
+      y = y || 0
+      console.log(x + y)
+    }
+
+    fn()
+    //这里会输出0，因为x和y都是undefined，在运算中算是false，false||false（0），返回第二个值，也就是0
+  </script>
+</body>
+
+</html>

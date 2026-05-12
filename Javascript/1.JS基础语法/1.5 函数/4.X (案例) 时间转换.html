@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>时间转换</title>
+</head>
+
+<body>
+  <script>
+    let userInput = +prompt(`请输入秒数`)
+
+    function getTime(userInput) {
+      let a1 = userInput % 3600
+      let Hours = parseInt(userInput / 3600)
+      let Mins = parseInt(a1 / 60)
+      let Seconds = parseInt(a1 % 60)
+      //缺0补0
+      Hours = Hours < 10 ? Hours = '0' + Hours : Hours
+      Mins = Mins < 10 ? Mins = '0' + Mins : Mins
+      Seconds = Seconds < 10 ? Seconds = '0' + Seconds : Seconds
+
+      return `${userInput}秒转换为${Hours}小时${Mins}分钟${Seconds}秒`
+    }
+
+    document.write(getTime(userInput))
+  </script>
+</body>
+
+</html>
