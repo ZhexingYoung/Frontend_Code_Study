@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    //函数返回值
+    function fnc() {
+      return 30
+    }
+    // ！！记住  console.log(fnc())才是对的 才会返回这个函数的结果
+    //如果是     console.log(fnc) 是直接打印函数本身 也就是会返回
+    // f fnc() {
+    //   return 30
+    // }
+    console.log(fnc())
+
+    //案例练习
+    //1.求任意两个数最大值
+    function getMax(a = 0, b = 0) {
+      if (a > b) {
+        return a
+      }
+      else {
+        return b
+      }
+    }
+
+    let a = +prompt('请输入第一个数')
+    let b = +prompt('请输入第二个数')
+
+    alert(getMax(a, b))
+
+    //求任意数组最值
+    function getArrMax(arr = []) {
+      let max = arr[0]
+      let min = arr[0]
+      for (i = 1; i < arr.length; i++) {
+        if (max < arr[i]) {
+          max = arr[i]
+        }
+        if (min > arr[i])
+          min = arr[i]
+      }
+      //注意return
+      return [max, min]
+    }
+    let arr2 = getArrMax([3, 1, 7, 10, 28])
+    console.log(`数组的最大值是:${arr2[0]},数组的最小值是${arr2[1]}`)
+  </script>
+</body>
+
+</html>

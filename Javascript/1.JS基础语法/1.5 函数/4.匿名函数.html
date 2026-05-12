@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>匿名函数</title>
+</head>
+
+<body>
+  <script>
+    //匿名函数
+    let fn = function () {
+      console.log('fn');
+    }
+    fn();//输出fn
+
+    //和具名函数的不同，具名函数可以先调用后声明，匿名函数不能先调用后声明
+    //案例：
+    fn1();//输出undefined，因为fn1是匿名函数，没有声明，所以输出undefined
+    let fn1 = function () {
+      console.log('fn2');
+    }
+    fn1();//输出fn1，因为fn1是具名函数，已经声明，所以输出fn1
+
+
+    fn3();//输出fn3，因为fn3是具名函数，可以先调用后声明，所以输出fn3
+    function fn3() {
+      console.log('fn3');
+    }
+
+
+    //匿名函数的立即执行
+    (function () {
+      console.log('fn4');
+    })();
+
+    //加上参数
+    (function (a, b) {
+      console.log(a + b);
+    })(1, 2);
+    //也可以
+    (function (a, b) {
+      console.log(a + b);
+    }(1, 2));
+
+    //本质上其实是一个函数表达式，所以可以赋值给变量
+    let fn5 = function () {
+      console.log('fn5');
+    }
+    fn5();//输出fn5，因为fn5是具名函数，已经声明，所以输出fn5
+  </script>
+</body>
+
+</html>

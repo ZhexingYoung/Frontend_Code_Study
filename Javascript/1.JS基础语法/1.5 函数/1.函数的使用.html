@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>函数的使用</title>
+</head>
+
+<body>
+  <script>
+    // 1.函数的使用
+    // 1.1 函数的声明
+    function getSum(start = 0, end = 0) {
+      let sum
+      for (sum = 0; start <= end; start++) {
+        sum = start + sum
+      }
+      console.log(sum)
+    }
+
+    let startNum = +prompt('请输出第一个数');
+    let endNum = +prompt("请输入第二个数");
+
+    getSum(startNum, endNum)
+  </script>
+</body>
+
+</html>

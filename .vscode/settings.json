@@ -1,4 +1,9 @@
 {
   "git.ignoreLimitWarning": true,
-  "liveServer.settings.port": 5503
+  "liveServer.settings.port": 5503,
+  "audioCues.enabled": "off",
+  "terminal.integrated.enableBell": false,
+  "accessibility.signals.lineHasError": false,
+  "accessibility.signals.lineHasWarning": false,
+  "editor.accessibilitySupport": "off",
 }

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    //1.特征
+    //1.1 函数名相同 后面覆盖前面
+    function fn() {
+      console.log('fn1');
+    }
+    function fn() {
+      console.log('fn2');
+    }
+    fn();//输出fn2
+
+    //1.2 参数不匹配时
+    function fn(a, b) {
+      console.log(a + b);
+    }
+    fn(1, 2, 3);//输出3，只取前两个参数
+    fn(1, 2);//输出3，只取前两个参数
+    fn(1);//输出NaN，只取第一个参数，因为没有传入第二个参数，所以b是undefined，所以NaN
+    fn();//输出NaN，没有参数，因为没有传入参数，所以a和b都是undefined，所以NaN
+
+    //2.作用域
+    //2.1 全局作用域
+    let a = 10;
+    function fn() {
+      console.log(a);
+    }
+    fn();//输出10
+
+    //2.2 局部作用域
+    function fn() {
+      let a = 10;
+    }
+    fn();//输出undefined，因为a是局部作用域，所以输出undefined
+
+    //2.3 特殊情况，不推荐
+    function fn() {
+      num = 10;//因为没有写let，所有js会偷偷改成全局变量来看，所以输出10
+    }
+    fn();
+    console.log(num);
+
+    //不同作用域下，变量名相同，不会冲突
+    let b = 10;
+    function fn() {
+      let b = 20;
+      console.log(b);//输出20，因为b是局部作用域，所以输出20
+    }
+    fn();
+    console.log(b);//输出10，因为b是全局作用域，所以输出10
+
+    //函数套函数
+    let num = 10;
+    function fn() {
+      let num = 20;
+      console.log(num);//输出20，因为num是局部作用域，所以输出20
+      function fn2() {
+        let num = 30;
+        console.log(num);//输出30，因为num是局部作用域，所以输出30
+      }
+      fn2();
+    }
+    fn();//输出20
+    console.log(num);//输出10，因为num是全局作用域，所以输出10
+
+    //变量访问的原则是就近原则
+
+  </script>
+</body>
+
+</html>

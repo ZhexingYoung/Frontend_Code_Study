@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>冒泡排序</title>
+</head>
+
+<body>
+  <script>
+
+    //从小到大
+    let arr = [2, 5, 3, 4, 1];
+    // 先排第一个
+    for (let i = 0; i < arr.length; i++) {
+      // console.log('第' + (i + 1) + '轮');
+      for (let j = 0; j < arr.length - 1 - i; j++) {
+        // console.log(arr[j], arr[j + 1]);
+        if (arr[j] > arr[j + 1]) {
+          let temp = arr[j]
+          arr[j] = arr[j + 1]
+          arr[j + 1] = temp
+        }
+      }
+    }
+
+    //从大到小
+    let arr2 = [5, 7, 1, 4, 9, 2, 3]
+    for (let k = 0; k < arr2.length - 1; k++) {
+      for (let j = 0; j < arr2.length - 1 - k; j++) {
+        if (arr2[j] < arr2[j + 1]) {
+          let temp2 = arr2[j];
+          arr2[j] = arr2[j + 1];
+          arr2[j + 1] = temp2;
+        }
+      }
+    }
+
+    //开发中一般
+    let arr3 = [2, 3, 7, 2, 4, 1, 6, 9, 2]
+    //升序排列
+    arr3.sort(function (a, b) {
+      return a - b
+    })
+    console.log(arr3)
+    //降序排列
+    arr3.sort(function (a, b) {
+      return b - a
+    })
+
+    console.log(arr3)
+
+
+    //
+    console.log(arr)
+    console.log(arr2)
+
+  </script>
+</body>
+
+</html>
