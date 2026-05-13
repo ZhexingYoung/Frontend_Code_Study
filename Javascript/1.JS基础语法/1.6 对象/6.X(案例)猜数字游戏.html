@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    let randomNum = Math.ceil(Math.random() * 10)
+    let flag = true //开关变量
+
+    for (let i = 1; i <= 3; i++) {
+      let num = +prompt(`请输入1-10一个数字`)
+      if (!isNaN(num) && num >= 1 && num <= 10) {
+        if (randomNum === num) {
+          flag = false
+          alert('恭喜你猜对啦');
+          break
+        }
+        else if (randomNum < num) {
+          alert(`数字猜大啦！还剩${3 - i}次`);
+        }
+        else if (randomNum > num) {
+          alert(`数字猜小啦！还剩${3 - i}次`);
+        }
+      }
+      else {
+        //来控制开关变量
+        alert(`请重新输入哦`);
+        i--
+        continue
+      }
+    }
+
+    if (flag) {
+      alert('次数用完，下次再来玩吧')
+    }
+    // if (1 <= num <= 10) {
+
+    // }
+    // else (
+    //   alert('请重新输入')
+    // )
+
+  </script>
+</body>
+
+</html>

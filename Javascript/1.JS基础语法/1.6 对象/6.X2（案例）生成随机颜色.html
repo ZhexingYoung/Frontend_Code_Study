@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    //1.初始数据建立
+    let arr15 = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f']
+
+
+    //2.函数建立
+    function getRandom(M, N) {
+      return Math.floor((Math.random() * (N - M + 1)) + M)
+      //注意所有函数都得有return
+    }
+
+    function getRandomColor(flag) {
+      if (flag) {
+        let color15 = '#'
+
+        for (let i = 0; i <= 5; i++) {
+
+          //这里的random（0，15）是因为索引从0开始的，一共16个
+          color15 += arr15[getRandom(0, arr15.length - 1)]
+        }
+
+        return color15
+      }
+
+      else {
+        let ArrColorRGB = []
+
+        for (let i = 0; i <= 2; i++) {
+          let b = getRandom(0, 255)
+          ArrColorRGB.push(b)
+        }
+
+        let ColorRGB = `RGB(${ArrColorRGB[0]},${ArrColorRGB[1]},${ArrColorRGB[2]})`
+
+        return ColorRGB
+      }
+    }
+
+    console.log(getRandomColor(true))
+    console.log(getRandomColor(false))
+  </script>
+
+</body>
+
+</html>

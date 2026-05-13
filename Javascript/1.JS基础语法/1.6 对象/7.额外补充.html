@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>额外补充</title>
+</head>
+
+<body>
+  <script>
+    //1.术语拓展
+    //保留字（在js里没意义，但在其他里面可能有）
+    //int，short,long,char
+
+    //语句 一段可持续的代码
+    //if（） for（）
+
+    //2.数据类型
+    //2.1 基本数据类型，或者叫值类型
+    //在存储时存储的是值本身：string，number，boolean，null，undefined
+    //2.2 引用数据类型，或者叫引用类型
+    //在存储时存储的是地址：object，array，function
+
+    //3.堆和栈的区别
+    //堆和栈是两种不同的数据结构，堆是动态分配的，栈是静态分配的。
+    //栈：由系统自动分配存放函数的参考值，局部变量等，其操作系统类似于数据结构中的栈（一般简单数据类型）
+    //堆：动态分配的，每个内存的大小不固定，也不会自动释放，需要手动释放，其操作系统类似于数据结构中的堆（一般引用数据类型）
+    //引用数据类型先找到栈里的地址，然后通过地址找到堆里的数据
+    
+    let obj1 = { name: '张三', age: 18 }
+    let obj2 = obj1;//这里obj2的地址指向了obj1的地址，所以obj2和obj1指向的是同一个对象
+    obj2.name = '李四';//这里修改了obj2的name属性，所以obj1的name属性也会被修改
+    console.log(obj1.name);//李四
+    console.log(obj2.name);//李四
+
+  </script>
+</body>
+
+</html>

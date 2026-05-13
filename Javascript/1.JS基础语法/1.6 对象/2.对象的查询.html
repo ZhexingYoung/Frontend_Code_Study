@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>对象的查询</title>
+</head>
+
+<body>
+  <script>
+    //1.对象的查询
+    //声明对象
+    let obj = {
+      uname: '张三',
+      age: 18,
+      gender: '男'
+    }
+
+    //查询对象
+    console.log(obj.uname);//查询“obj”这个对象里的“uname”属性
+    //当对象里的属性名为字符串时，需要使用中括号来查询 obj['属性名']
+    console.log(obj['name-id']);
+
+
+
+    //2.对象属性的修改
+    obj.uname = '李四'; //直接重新赋值
+    console.log(obj.uname);
+
+    //3.对象属性的增改
+    obj.hobby = '打篮球'; //新增属性
+    console.log(obj.hobby);
+    delete obj.hobby; //删除属性
+    console.log(obj.hobby);
+
+
+    //案例练习
+    let obj = {
+      'name-id': '100012',
+      name: '小米10青春版',
+      num: '100012390802',
+      website: 'www.xiaomi.com',
+      weight: '0.15kg',
+      address: '北京市海淀区'
+    }
+
+    obj.name = '小米10Plus'
+    obj.color = 'pink'
+    delete obj.address
+
+    console.log(obj.name);
+    console.log(obj.num);
+    console.log(obj.website);
+    console.log(obj.weight);
+    console.log(obj.color);
+
+    //当对象里的属性名为字符串时，需要使用中括号来查询 obj['属性名']
+    console.log(obj['name-id']);
+
+  </script>
+</body>
+
+</html>

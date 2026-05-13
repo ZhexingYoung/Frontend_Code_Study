@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>内置对象</title>
+</head>
+
+<body>
+  <script>
+    //1.内置对象
+    //1.1 Math对象
+
+    //随机
+    console.log(Math.random()); //生成0-1 之间的随机数，包含0，不包含1
+
+    //向上取整
+    console.log(Math.ceil(Math.random() * 100)); //生成0-100 之间的随机数，包含0，不包含100，向上取整
+
+    //向下取整
+    console.log(Math.floor(Math.random() * 100)); //生成0-100 之间的随机数，包含0，不包含100，向下取整
+
+    //四舍五入
+    console.log(Math.round(Math.random() * 100)); //生成0-100 之间的随机数，包含0，不包含100，四舍五入
+
+    //取整函数（但是这个可以写字符串）
+    console.log(parseInt(12.33));//12
+    console.log(parseInt('12.33px'));//12
+    console.log(typeof parseInt('12.33px'));//number  
+
+    //取极值函数
+    console.log(Math.max(1, 2, 3, 4, 5));//5
+    console.log(Math.min(1, 2, 3, 4, 5));//1
+
+    //取绝对值函数
+    console.log(Math.abs(-10));//10
+
+    //取幂函数
+    console.log(Math.pow(2, 3));//2的3次方 = 8
+
+  </script>
+</body>
+
+</html>

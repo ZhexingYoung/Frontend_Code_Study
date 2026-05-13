@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>内置对象-随机数</title>
+</head>
+
+<body>
+
+  <script>
+    //1.内置对象-随机数
+    console.log(Math.random());//生成0-1 之间的随机数，包含0，不包含1
+    console.log(Math.random() * 100);//生成0-100 之间的随机数，包含0，不包含100
+    console.log(Math.random() * 100 + 1);//生成1-100 之间的随机数，包含1，不包含100
+
+    //随机生成N-M之间的随机数
+    function getRandom(N, M) {
+      return Math.floor(Math.random() * (M - N + 1) + N);
+    }
+    console.log(getRandom(1, 100));
+
+    //案例练习
+    let arr = ['赵云', '关羽', '张飞', '马超', '黄忠', '魏延', '曹操'];
+    let random = Math.floor(Math.random() * arr.length)
+    document.write(arr[random])
+    
+    arr.splice(random, 1)
+    console.log(arr)
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>对象的遍历</title>
+</head>
+
+<body>
+  <script>
+    //1.对象的遍历
+    //声明对象
+    let obj = {
+      uname: '张三',
+      age: 18,
+      gender: '男'
+    }
+    //遍历对象
+    //前置概念
+    let arr = [1, 2, 3, 4, 5];
+    for (let k in arr) {
+      console.log(k);//数组的下标，索引号，但是是字符串‘0’，不是数字，有潜在的数据类型的风险
+      console.log(arr[k]);//数组的内容
+    }
+
+
+    //这句话的意思是：遍历obj对象，把obj对象的属性名赋值给key，把obj对象的属性值赋值给obj[key]
+    for (let key in obj) {
+      console.log(key); // 得到的是属性名‘uname’‘age’‘gender’
+      //console.log(obj.key); 不能这样写，因为这样的意思是：obj对象的key属性,得到的是undefined
+      //但是key是字符串，console.log(obj.key);本质就是console.log(obj.‘uname’); 所以需要使用obj[key]
+
+      console.log(obj[key]); //输出属性值‘张三’‘18’‘男’
+    }
+
+    //案例练习：
+    let student = [{
+      name: '小明',
+      age: 18,
+      gender: '男',
+      hometown: '北京',
+    },
+    {
+      name: '小红',
+      age: 19,
+      gender: '女',
+      hometown: '上海',
+    },
+    {
+      name: '小刚',
+      age: 20,
+      gender: '男',
+      hometown: '广州',
+    },
+    {
+      name: '小李',
+      age: 21,
+      gender: '女',
+      hometown: '深圳',
+    }
+    ]
+
+    //
+    for (let i = 0; i < student.length; i++) {
+      for (let key in student[i]) {
+        // console.log(key);
+        console.log(student[i].name);
+      }
+    }
+  </script>
+</body>
+
+</html>
