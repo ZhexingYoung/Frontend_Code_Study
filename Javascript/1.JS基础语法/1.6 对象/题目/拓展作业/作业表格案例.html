@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    table {
+      margin: 200px auto;
+      width: 80%;
+      border-collapse: collapse;
+      border: 1px solid #000;
+      text-align: center;
+      border-spacing: 0;
+    }
+
+    th {
+      background-color: #bdbdbd;
+      border: 1px solid #000;
+      padding: 3px;
+    }
+
+    td {
+      border: 1px solid #000;
+    }
+
+    tr:hover {
+      background-color: #bdbdbd;
+    }
+  </style>
+</head>
+
+<body>
+  <table>
+    <tr>
+      <th>编号</th>
+      <th>科目</th>
+      <th>成绩</th>
+      <th>操作</th>
+    </tr>
+
+    <script>
+      let data = [
+        { subject: '语文', score: 46 },
+        { subject: '数学', score: 80 },
+        { subject: '英语', score: 100 },
+      ]
+
+      function totalScore() {
+        let totalScore = 0;
+        for (let i = 0; i < data.length; i++) {
+          totalScore += +data[i].score;
+        }
+        return totalScore;
+      }
+
+      function averageScore() {
+        let averageScore = totalScore() / data.length;
+        return averageScore;
+      }
+
+
+      for (let i = 0; i < data.length; i++) {
+        document.write(`
+          <tr>
+            <td>${i + 1}</td>
+            <td>${data[i].subject}</td>
+            <td>${data[i].score}</td>
+            <td><a href="#">删除</a></td>
+          </tr>
+        `)
+      }
+
+
+
+      document.write(`
+        <tr>
+          <td colspan="4">总分：${totalScore()} 平均分：${parseInt(averageScore())}</td>
+        </tr>`)
+    </script>
+
+  </table>
+
+
+</body>
+
+</html>

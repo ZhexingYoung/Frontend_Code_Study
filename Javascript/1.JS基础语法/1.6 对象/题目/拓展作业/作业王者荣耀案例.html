@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>作业王者荣耀案例</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    .box {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      grid-template-rows: repeat(4, 1fr);
+      padding: 10px;
+      gap: 15px;
+
+      /* 盒子放在页面的中心 */
+      width: 1000px;
+      margin: 50px auto;
+      border: 1px solid #000;
+      background-color: lightblue;
+    }
+
+    .item {
+      overflow: hidden;
+      position: relative;
+      display: flex;
+      border-radius: 10px;
+      transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .item img {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+
+    .item p {
+      display: flex;
+      justify-content: center;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      margin-bottom: 0;
+      height: 40px;
+      background-color: rgba(0, 0, 0, 0.5);
+      color: #fff;
+      text-align: center;
+      line-height: 40px;
+    }
+
+    .item:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.5);
+      z-index: 1;
+    }
+  </style>
+
+</head>
+
+<body>
+  <!-- 先写盒子 -->
+  <div class=box>
+
+    <script>
+
+      let datas = [
+        { name: '司马懿', imgSrc: './英雄列表案例/uploads/heros/01.jpg' },
+        { name: '女娲', imgSrc: './英雄列表案例/uploads/heros/02.jpg' },
+        { name: '百里守约', imgSrc: './英雄列表案例/uploads/heros/03.jpg' },
+        { name: '亚瑟', imgSrc: './英雄列表案例/uploads/heros/04.jpg' },
+        { name: '虞姬', imgSrc: './英雄列表案例/uploads/heros/05.jpg' },
+        { name: '张良', imgSrc: './英雄列表案例/uploads/heros/06.jpg' },
+        { name: '安其拉', imgSrc: './英雄列表案例/uploads/heros/07.jpg' },
+        { name: '李白', imgSrc: './英雄列表案例/uploads/heros/08.jpg' },
+        { name: '阿珂', imgSrc: './英雄列表案例/uploads/heros/09.jpg' },
+        { name: '墨子', imgSrc: './英雄列表案例/uploads/heros/10.jpg' },
+        { name: '鲁班', imgSrc: './英雄列表案例/uploads/heros/11.jpg' },
+        { name: '嬴政', imgSrc: './英雄列表案例/uploads/heros/12.jpg' },
+        { name: '孙膑', imgSrc: './英雄列表案例/uploads/heros/13.jpg' },
+        { name: '周瑜', imgSrc: './英雄列表案例/uploads/heros/14.jpg' },
+        { name: 'XXX', imgSrc: './英雄列表案例/uploads/heros/15.jpg' },
+        { name: 'XXX', imgSrc: './英雄列表案例/uploads/heros/16.jpg' },
+        { name: 'XXX', imgSrc: './英雄列表案例/uploads/heros/17.jpg' },
+        { name: 'XXX', imgSrc: './英雄列表案例/uploads/heros/18.jpg' },
+        { name: 'XXX', imgSrc: './英雄列表案例/uploads/heros/19.jpg' },
+        { name: 'XXX', imgSrc: './英雄列表案例/uploads/heros/20.jpg' }
+      ]
+
+      for (let i = 0; i < datas.length; i++) {
+        document.write(`<div class=item>
+      <img src=${datas[i].imgSrc} alt="${datas[i].name}" title="${datas[i].name}">
+
+      <p>${datas[i].name}</p>
+  </div>`)
+      }
+    </script>
+  </div>
+</body>
+
+</html>
