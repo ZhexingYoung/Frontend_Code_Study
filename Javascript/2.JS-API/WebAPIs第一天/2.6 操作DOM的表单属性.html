@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2.6 操作DOM的表单属性</title>
+</head>
+
+<body>
+  <!-- 1. -->
+  <!-- <form action="">
+    <input type="text" name="username" placeholder="请输入用户名" value="对的">
+  </form> -->
+
+
+  <form action="">
+    <input type="checkbox" name="" id="" checked>
+    <button disabled> 点击</button>
+  </form>
+
+  <script>
+
+    // //1.input框取值
+    // //获取表单
+    // const username = document.querySelector('input')
+    // //得到表单里的值
+    // console.log(username.value)
+    // //修改表单类型
+    // username.type = 'password'
+
+    //2.表单操作
+    const ipt = document.querySelector('input')
+    ipt.checked = false
+    // ipt.checked = 'false'//会转换成布尔值，true，注意
+    const button = document.querySelector('button')
+    button.disabled = false
+
+  </script>
+</body>
+
+</html>

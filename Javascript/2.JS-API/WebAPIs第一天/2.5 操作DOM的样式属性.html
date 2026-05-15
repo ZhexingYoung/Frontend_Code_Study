@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2.5 操作DOM的样式属性</title>
+  <style>
+    .box {
+      width: 100px;
+      height: 100px;
+      background-color: pink;
+    }
+
+    .box2 {
+      width: 100px;
+      height: 100px;
+      background-color: rgb(113, 113, 113);
+    }
+
+    .boxchange {
+      width: 100px;
+      height: 100px;
+      background-color: red;
+      border: 1px solid black;
+    }
+
+    .boxchange:hover {
+      background-color: blue;
+      border: 1px solid black;
+    }
+
+    body {
+      background-image: url('./assets/01.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- 1.操作元素的样式属性 -->
+  <!-- 对象.style.属性 = 值 -->
+  <div class="box">我是文字内容</div>
+  <script>
+    const box = document.querySelector('.box');
+
+    // 对象.style.属性 = 值 
+    box.style.backgroundColor = 'red'; //CSS中多组单词用小驼峰命名法
+    box.style.border = '1px solid black';
+
+    // （练习随机更换背景图）
+
+    function getRandom(N, M) {
+      return Math.floor(Math.random() * (M - N + 1) + N);
+    }
+
+    const random = getRandom(1, 6);
+    document.body.style.backgroundImage = `url('./assets/0${random}.jpg')`;
+
+  </script>
+
+
+  <!-- 2.通过className来修改样式属性 -->
+  <div class="box2">我是文字内容</div>
+  <script>
+    //1.获取元素
+    const box2 = document.querySelector('.box2');
+    //2.修改元素的className
+    // 元素.class = ‘值’
+    box2.className = 'boxchange';
+
+    //注意：如果className中只有一个类名，则直接修改为新类名
+    //如果想用className添加类名，可以添加多个类名，用空格隔开
+    //box2.className = 'box2 boxchange';
+    //或者box2.className += ' box2';
+  </script>
+
+  <!-- 3.通过classList来修改样式属性 -->
+  <div class="box3">我是文字内容</div>
+  <script>
+    //1.获取元素
+    const box3 = document.querySelector('.box3');
+
+    //2.修改元素的classList
+    // 元素.classList.add('值')
+    box3.classList.add('boxchange');
+
+    //3.删除元素的classList
+    // 元素.classList.remove('值')
+    box3.classList.remove('boxchange');
+
+    //4.切换元素的classList (有就删掉，没有就加上)
+    // 元素.classList.toggle('值')
+    box3.classList.toggle('boxchange');
+
+    //5.判断元素的classList是否包含某个值
+    // 元素.classList.contains('值')
+    console.log(box3.classList.contains('boxchange'));
+  </script>
+</body>
+
+</html>

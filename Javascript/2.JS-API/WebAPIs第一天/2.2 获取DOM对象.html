@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2.2 WebAPI基本认知</title>
+</head>
+
+<body>
+  <ul class="nav">
+    <li>我的首页</li>
+    <li>我的博客</li>
+    <li>我的留言</li>
+  </ul>
+  <script>
+    // 1. API
+    // API是Application Programming Interface的缩写，意为应用程序编程接口。
+    //作用：用JS来操作HTML和浏览器
+    // API是一些预先定义的函数，可以用来访问操作系统、数据库、浏览器等。
+    //主要包含DOM和BOM两个部分
+    //BOM：Browser Object Model，浏览器对象模型
+
+    //DOM：Document Object Model，文档对象模型
+    //（操作网页内容的功能），可以在开发中获取元素，修改元素，删除元素，创建元素等。
+    //DOM树：DOM树是HTML文档的树形结构，DOM树是HTML文档的树形结构，DOM树是HTML文档的树形结构。
+    //DOM元素：DOM元素是DOM树中的节点
+
+    //Document是什么？
+    //Document是HTML文档的根节点，Document是HTML文档的根节点，Document是HTML文档的根节点。
+
+    //2.获取DOM对象
+    //2.1 获取元素（通过CSS选择器来获取）,选择匹配的第一个元素（必须是字符串）
+    //2.1.1 通过id获取元素
+    document.querySelector('#id'); //返回一个元素对象
+    //2.1.2 通过class获取元素
+    document.querySelector('.class'); //返回一个元素对象
+    //2.1.3 通过标签获取元素
+    document.querySelector('tag'); //返回一个元素对象
+    //2.1.4 通过属性获取元素
+    document.querySelector('[attr="value"]'); //返回一个元素对象
+    //2.1.5 通过伪类获取元素
+    // document.querySelector(':pseudo-class'); //返回一个元素对象
+    //也可以复合写法
+    document.querySelector('.class tag'); //返回一个元素对象
+    //如果没有匹配的元素，则返回null
+
+
+    const ul = document.querySelector('.nav');
+
+
+    const lis = document.querySelectorAll('li');
+    //选择所有的li元素，返回一个nodeList对象
+    //nodeList对象是一个伪数组，伪数组不是数组，有长度有索引号，但是不能使用数组的方法（增删改查）
+    //但是可以像数组一样使用for循环遍历
+    for (let i = 0; i < lis.length; i++) {
+      console.log(lis[i]);
+    }
+
+    console.log(ul);
+    console.log(lis);
+
+    //获取DOM元素方法（了解就行）
+    document.getElementById('id'); //返回一个元素对象
+    document.getElementsByClassName('class'); //返回一个元素对象
+    document.getElementsByTagName('tag'); //返回一个元素对象
+  </script>
+</body>
+
+</html>

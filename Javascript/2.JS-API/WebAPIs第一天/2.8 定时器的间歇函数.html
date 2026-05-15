@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2.8 定时器的间歇函数</title>
+</head>
+
+<body>
+  <!-- setInterval（函数，间隔时间） -->
+  <!-- 作用：每隔一段时间触发这个函数， -->
+  <script>
+    setInterval(function () {
+      console.log('一秒执行一次')
+    }, 1000)
+
+    //第二种写发：
+    function fn() {
+      console.log('一秒执行一次')
+    }
+
+    //!!!!注意⚠️ 这里fn不加小括号，加了会直接调用（只运行一次），而不加的话会1000ms自动调用一次fn
+    setInterval(fn, 1000)
+    let n = setInterval(fn, 1000)
+    let m = setInterval(fn, 2000)
+    // 定时器函数返回会返回编号，（因为一个页面可能有多个定时器）
+    console.log(n)
+    console.log(m)
+
+    //关闭定时器⏲️
+    //clearInterval (变量名)
+    clearInterval(n)
+
+    //重新开就是重新赋值，所以用let
+    n = setInterval(fn, 1000)
+
+  </script>
+  <!-- 练习 按钮60秒后才能使用 -->
+  <textarea name="" id="" cols="30" rows="30">
+        用户注册协议
+        欢迎注册成为京东用户！在您注册过程中，您需要完成我们的注册流程并通过点击同意的形式在线签署以下协议，请您务必仔细阅读、充分理解协议中的条款内容后再点击同意（尤其是以粗体或下划线标识的条款，因为这些条款可能会明确您应履行的义务或对您的权利有所限制）。
+        【请您注意】如果您不同意以下协议全部或任何条款约定，请您停止注册。您停止注册后将仅可以浏览我们的商品信息但无法享受我们的产品或服务。如您按照注册流程提示填写信息，阅读并点击同意上述协议且完成全部注册流程后，即表示您已充分阅读、理解并接受协议的全部内容，并表明您同意我们可以依据协议内容来处理您的个人信息，并同意我们将您的订单信息共享给为完成此订单所必须的第三方合作方（详情查看
+  </textarea>
+  <br>
+  <button class='btn' disabled> 我已阅读用户协议(5)</button>
+  <script>
+    const btn = document.querySelector('.btn')
+
+    let i = 5
+    function fn() {
+      if (i === 0) {
+        clearInterval(l)
+        btn.disabled = false
+        btn.innerHTML = '我同意用户协议'
+      }
+      else {
+        btn.innerHTML = `我已阅读用户协议(${i})`
+        i--;
+      }
+    }
+
+    let l = setInterval(fn, 1000);
+
+  </script>
+
+
+</body>
+
+</html>

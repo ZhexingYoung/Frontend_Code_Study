@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2.3 操作DOM对象</title>
+</head>
+
+<body>
+  <!-- <div class="box">我是文字内容</div>
+  <script>
+    //1.innerText：获取或设置DOM对象的纯文字内容
+    const box = document.querySelector('.box');
+    console.log(box.innerText);
+    //修改DOM对象的内容
+    box.innerText = '我是新的文字内容';//纯文字不解析标签
+    console.log(box.innerText);
+
+    //2.innerHTML：获取或设置DOM对象的HTML内容
+    console.log(box.innerHTML);
+    //修改DOM对象的内容
+    box.innerHTML = '<span>我是新的文字内容</span>';//解析标签
+    console.log(box.innerHTML);
+  </script> -->
+
+  <!-- 练习案例：修改DOM对象的内容 -->
+  <div class="box2">
+    <strong>年会抽奖</strong>
+    <h1>一等奖：<span id="first">???</span></h1>
+    <h2>二等奖：<span id="second">???</span></h2>
+    <h3>三等奖：<span id="third">???</span></h3>
+  </div>
+  <Script>
+    const arrName = ['刘德华', '张学友', '郭富城', '黎明'];
+
+    function getRandom(N, M) {
+      return Math.floor(Math.random() * (M - N + 1) + N);
+    }
+
+    let random = getRandom(0, arrName.length - 1);
+    document.querySelector(`#first`).innerText = arrName[random];
+    arrName.splice(random, 1);
+    console.log(arrName);
+
+    random = getRandom(0, arrName.length - 1);
+    document.querySelector(`#second`).innerText = arrName[random];
+    arrName.splice(random, 1);
+    console.log(arrName);
+
+    random = getRandom(0, arrName.length - 1);
+    document.querySelector(`#third`).innerText = arrName[random];
+    arrName.splice(random, 1);
+    console.log(arrName);
+
+  </script>
+</body>
+
+</html>
