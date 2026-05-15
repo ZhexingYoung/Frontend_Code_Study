@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>事件对象</title>
+</head>
+
+<body>
+  <input type="text"></input>
+  <script>
+    //1.对象里有事件触发时的相关信息
+
+    //2.在事件绑定的回调函数的第一个参数就是
+    //元素.addEvenListener('click', function(e){}) 中的e
+    const ipt = document.querySelector('input')
+    ipt.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter') {
+        console.log('Enter键被按下')
+      }
+    })
+
+    //常见属性
+    //1.target：事件触发的目标元素
+    //2.currentTarget：事件绑定的元素
+    //3.type：事件类型
+    //4.timeStamp：事件触发的时间
+    //5.relatedTarget：事件触发时相关联的元素
+    //6.buttons：事件触发时鼠标按钮的状态
+    //7.clientX：事件触发时鼠标在客户端的横坐标
+    //8.clientY：事件触发时鼠标在客户端的纵坐标
+    //offsetX：事件触发时鼠标在目标元素的横坐标
+    //offsetY：事件触发时鼠标在目标元素的纵坐标
+    //pageX：事件触发时鼠标在页面中的横坐标
+    //pageY：事件触发时鼠标在页面中的纵坐标
+    //screenX：事件触发时鼠标在屏幕中的横坐标
+    //screenY：事件触发时鼠标在屏幕中的纵坐标
+    //key：事件触发时键盘的按键码
+
+
+  </script>
+
+</body>
+
+</html>

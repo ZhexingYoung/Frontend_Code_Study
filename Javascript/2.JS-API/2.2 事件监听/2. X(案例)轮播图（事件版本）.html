@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    ul,
+    li {
+      list-style: none;
+    }
+
+    .slider {
+      margin: 20px 0 0 20px;
+      width: 600px;
+      height: 450px;
+      border: 1px solid red;
+    }
+
+    .slider-wrapper {
+      width: 100%;
+      height: 80%;
+      background-image: url(../assets/slider01.jpg);
+      background-size: cover;
+      background-position: center;
+    }
+
+    .slider-footer {
+      position: relative;
+      width: 100%;
+      height: 20%;
+      background-color: rgb(100, 67, 68);
+
+    }
+
+    .slider-footer p {
+      display: inline-block;
+      position: absolute;
+      top: 20%;
+      left: 20px;
+      width: 100%;
+      color: #fff;
+      font-size: 17px;
+      font-weight: solid;
+      text-align: left;
+      line-height: 17px;
+    }
+
+    .slider-footer-button-box {
+      position: absolute;
+      display: flex;
+      justify-content: space-between;
+      top: 20%;
+      right: 20px;
+      height: 30px;
+      width: 80px;
+      padding: 0;
+    }
+
+    .slider-footer-button {
+      display: inline-block;
+      width: 30px;
+      height: 30px;
+      background-color: #aeaeae;
+      border-radius: 50%;
+    }
+
+    .slider-footer-button:hover {
+      scale: 1.2;
+      background-color: #dadada;
+    }
+
+    .slider-footer-dot {
+      position: absolute;
+      bottom: 15%;
+      left: 20px;
+      height: 20px;
+      width: 100%;
+    }
+
+    .slider-footer-dot ul {
+      display: flex;
+      gap: 8px;
+
+    }
+
+    .slider-footer-dot ul li {
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      background-color: #bfbfbf;
+      border-radius: 50%;
+    }
+
+    .slider-footer-dot ul li.active {
+      display: inline-block;
+      scale: 1.3;
+      background-color: #ffffff;
+      border-radius: 50%;
+
+    }
+  </style>
+</head>
+
+<body>
+  <div class="slider">
+    <div class="slider-wrapper"></div>
+    <div class="slider-footer">
+      <p>对人类来说会不会太超前了?</p>
+      <div class="slider-footer-dot">
+        <ul>
+          <li class="active"></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+      </div>
+      <div class="slider-footer-button-box">
+        <div class="slider-footer-button prev"></div>
+        <div class="slider-footer-button next"></div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+  <script>
+    //1. 初始数据
+    const sliderData = [
+      { url: '../assets/slider01.jpg', title: '对人类来说会不会太超前了？', color: 'rgb(100, 67, 68)' },
+      { url: '../assets/slider02.jpg', title: '开启剑与雪的黑暗传说！', color: 'rgb(43, 35, 26)' },
+      { url: '../assets/slider03.jpg', title: '真正的jo厨出现了！', color: 'rgb(36, 31, 33)' },
+      { url: '../assets/slider04.jpg', title: '李玉刚：让世界通过B站看到东方大国文化', color: 'rgb(139, 98, 66)' },
+      { url: '../assets/slider05.jpg', title: '快来分享你的寒假日常吧~', color: 'rgb(67, 90, 92)' },
+      { url: '../assets/slider06.jpg', title: '哔哩哔哩小年YEAH', color: 'rgb(166, 131, 143)' },
+      { url: '../assets/slider07.jpg', title: '一站式解决你的电脑配置问题！！！', color: 'rgb(53, 29, 25)' },
+      { url: '../assets/slider08.jpg', title: '谁不想和小猫咪贴贴呢！', color: 'rgb(99, 72, 114)' },
+    ]
+
+    let i = 0
+
+    const sliderWrapper = document.querySelector('.slider-wrapper');
+    const sliderFooter = document.querySelector('.slider-footer');
+    const sliderFooterP = document.querySelector('.slider-footer p');
+    //这里主要li:nth-child(${random + 1} 这一步来选择对应li，但因为li是从1开始的，所以需要加1
+    const li = document.querySelector(`.slider-footer-dot ul li:nth-child(${i + 1})`);
+
+    //渲染模块函数（记得得先进行i的判断再渲染，所以函数得在最后）
+    function render() {
+      //渲染对应的图片
+      sliderWrapper.style.backgroundImage = `url(${sliderData[i].url})`
+      sliderFooter.style.backgroundColor = sliderData[i].color
+      sliderFooterP.innerHTML = sliderData[i].title
+
+      //先删除原来的li的active
+      document.querySelector(`.slider-footer-dot ul .active`).classList.remove('active')
+      document.querySelector(`.slider-footer-dot ul li:nth-child(${i + 1})`).classList.add('active')
+    }
+
+    //1.右按钮业务
+    const nextButton = document.querySelector('.next');
+    nextButton.addEventListener('click', function () {
+      i++
+      if (i >= sliderData.length) {
+        i = 0
+      }
+      //调用渲染模块
+      render()
+
+    })
+
+    //2.左按钮业务
+    const prevButton = document.querySelector('.prev');
+    prevButton.addEventListener('click', function () {
+      i--
+      if (i < 0) {
+        i = sliderData.length - 1
+      }
+      //调用渲染模块
+      toggle()
+    })
+
+    //3.自动播放模块（因为自动播放 = 下一张 所以我们直接调用next.click的逻辑就行）
+    let timerId = setInterval(function () {
+      nextButton.click()
+    }, 1000)
+
+    //4.鼠标经过大盒子停止
+    const slider = document.querySelector('.slider');
+    slider.addEventListener('mouseenter', function () {
+      clearInterval(timerId)
+    })
+    slider.addEventListener('mouseleave', function () {
+      timerId = setInterval(function () {
+        nextButton.click()
+      }, 1000)
+    })
+  </script>
+
+</body>
+
+</html>

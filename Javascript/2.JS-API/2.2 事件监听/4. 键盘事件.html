@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>键盘事件</title>
+</head>
+
+<body>
+  <input type="text"></input>
+  <script>
+    //1.键盘事件
+    const ipt = document.querySelector('input')
+    ipt.addEventListener('keydown', function () {
+      console.log('键盘按下')
+    })
+    ipt.addEventListener('keyup', function () {
+      console.log('键盘松开')
+    })
+
+    //2.用户输入文本事件 input
+    ipt.addEventListener('input', function () {
+      console.log(ipt.value)
+    })
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>事件监听</title>
+  <style>
+    .box1 {
+      width: 800px;
+      height: 300px;
+      margin: 150px auto;
+      border: 1px solid rgb(171, 171, 171);
+    }
+
+    .box1 h3 {
+      display: block;
+      text-align: center;
+      margin: 10px;
+      margin-bottom: 50px;
+    }
+
+    .box1 p {
+      display: block;
+      height: 40%;
+      margin: 10px 10px 10px 20px;
+      font-size: 24px;
+    }
+
+    .btnbox {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      height: 84px;
+    }
+
+    .btnbox button {
+      text-align: center;
+      height: 30px;
+      width: 100px;
+    }
+  </style>
+
+
+</head>
+
+<body>
+  <div class=box1>
+    <h3>随机问答</h3>
+    <p>问题是：<span> </span></p>
+    <div class=btnbox>
+      <button class=start>开始</button>
+      <button class=end disabled>结束</button>
+    </div>
+  </div>
+  <script>
+    // 事件监听
+
+    //元素对象.addEventListener('事件类型', 事件处理函数);
+    //事件源: 哪个DOM元素被事件触发了，要获取DOM元素
+    //事件类型: 事件的类型，比如点击事件、鼠标移入事件、键盘事件等
+    //事件处理函数: 事件处理函数，当事件触发时，要执行的函数
+    // const btn = document.querySelector('button')
+    // btn.addEvenListener('click', function () {
+    //   alert('点击事件');
+    // })
+
+
+    //(额外)老版本写法
+    // btn.addEvenListener('click', function () {
+    //   alert('点击事件');
+    // })
+    //也可以叫
+    // btn.onclick = function () {
+    //   alert('点击事件');
+    // }
+    //区别：on方式后面的事件会覆盖前面的，而addevent可以绑定多次，可以实现多事件
+
+
+
+
+    //案例练习：随机问答
+    //数据数组
+    const questionList = [
+      {
+        question: '问题1',
+        answer: '答案1',
+      },
+      {
+        question: '问题2',
+        answer: '答案2',
+      },
+      {
+        question: '问题3',
+        answer: '答案3',
+      },
+      {
+        question: '问题4',
+        answer: '答案4',
+      },
+      {
+        question: '问题5',
+        answer: '答案5',
+      },
+      {
+        question: '问题6',
+        answer: '答案6',
+      },
+    ]
+
+    //业务1.开始模块按钮
+    //1.1 获取开始按钮对象
+    const btnStart = document.querySelector('.start')
+    const btnEnd = document.querySelector('.end')
+    const qs = document.querySelector('.box1 p span')
+
+    //全局变量声明
+    let timeId = 0
+    let random = 0
+    //给开始按钮添加
+
+    btnStart.addEventListener('click', function () {
+      if (questionList.length === 1) {
+        qs.innerText = questionList[0].question
+        btnEnd.disabled = true
+        btnStart.disabled = true
+
+        return
+      }
+
+      timeId = setInterval(function () {
+        random = Math.floor(Math.random() * questionList.length);
+        qs.innerText = questionList[random].question
+        console.log(random)
+      }
+        , 200)
+
+      btnEnd.disabled = false
+      btnStart.disabled = true
+    })
+
+    btnEnd.addEventListener('click', function () {
+      clearInterval(timeId)
+      console.log(questionList)
+      btnStart.disabled = false
+      btnEnd.disabled = true
+
+      questionList.splice(random, 1)
+    })
+
+  </script>
+</body>
+
+</html>

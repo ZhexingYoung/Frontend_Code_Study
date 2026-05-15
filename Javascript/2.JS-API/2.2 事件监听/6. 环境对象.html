@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>环境对象</title>
+</head>
+
+<body>
+  <script>
+    // 1.当前函数运行所处的环境的 是个对象 this 普通函数里面指向的是window
+    function fn() {
+      console.log(this);
+    }
+    fn();//输出window
+
+    // 函数执行时，函数内部的this指向 谁调用函数，this就指向谁
+    function fn() {
+      console.log(this);
+    }
+    fn();//输出window
+
+    //2.回调函数的意思是
+    //把函数作为参数传递给另一个函数，本质还是函数，只不过当参数使用
+    //常见的场景
+    function fn() {
+      console.log('我是回调函数');
+    }
+
+    //fn传递给了setInterval，setInterval执行时，回调函数内部的this指向 setInterval
+    setInterval(fn, 1000);
+  </script>
+
+</body>
+
+</html>
