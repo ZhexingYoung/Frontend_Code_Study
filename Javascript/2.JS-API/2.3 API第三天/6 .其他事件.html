@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+      height: 3000px;
+    }
+
+    div {
+      display: none;
+      margin: 100px;
+      overflow: scroll;
+      height: 200px;
+      width: 200px;
+      border: 1px solid black;
+    }
+  </style>
+</head>
+
+<body>
+  <div>
+    我里面有很多很多的文字
+    我里面有很多很多的文字
+    我里面有很多很多的文字
+    我里面有很多很多的文字
+    我里面有很多很多的文字
+    我里面有很多很多的文字
+    我里面有很多很多的文字
+    我里面有很多很多的文字
+    我里面有很多很多的文字
+    我里面有很多很多的文字
+    我里面有很多很多的文字
+    我里面有很多很多的文字
+    我里面有很多很多的文字
+    我里面有很多很多的文字
+    我里面有很多很多的文字
+    我里面有很多很多的文字
+    我里面有很多很多的文字
+    我里面有很多很多的文字
+    我里面有很多很多的文字
+    我里面有很多很多的文字
+    我里面有很多很多的文字
+    我里面有很多很多的文字
+    我里面有很多很多的文字
+    我里面有很多很多的文字
+    我里面有很多很多的文字
+    我里面有很多很多的文字
+    我里面有很多很多的文字
+    我里面有很多很多的文字
+    我里面有很多很多的文字
+    我里面有很多很多的文字
+    我里面有很多很多的文字
+    我里面有很多很多的文字
+    我里面有很多很多的文字
+    我里面有很多很多的文字
+    我里面有很多很多的文字
+    我里面有很多很多的文字
+    我里面有很多很多的文字
+    我里面有很多很多的文字
+    我里面有很多很多的文字
+    我里面有很多很多的文字
+    我里面有很多很多的文字
+    我里面有很多很多的文字
+    我里面有很多很多的文字
+
+  </div>
+  <script>
+    //1.页面加载事件 load
+    //原因：有些时候需要等页面资源加载全部处理完成后再做一些事情
+    //老代码喜欢吧script写到head里 这时会导致dom元素找不到
+
+    //监听页面 *所有* 资源加载完毕,加载完毕再执行回调函数
+    window.addEventListener('load', function () {
+      console.log('页面加载完成')
+    })
+
+    //图片加载
+    // img.addEventListener('load', function () {
+    //   console.log('图片加载完成')
+    // })
+    // img.addEventListener('error', function () {
+    //   console.log('图片加载失败')
+    // })
+
+    //2.DOMcontentLoaded 事件
+    //原因：无需等待所有资源加载完毕，只要DOM加载完毕就执行回调函数，因为是DOM，所以和windows无关，和document有关
+    document.addEventListener('DOMContentLoaded', function () {
+      console.log('DOM加载完成')
+    })
+
+    //3.页面滚动事件
+    //滚动条在滚动时的事件监听
+    // window.addEventListener('scroll', function () {
+    //   console.log('滚动条滚动')
+    // })
+
+    //3.1 检测滚了100px (scrollTop:滚动条向下滚动时，距离顶部的距离)
+    const div = document.querySelector('div')
+    div.addEventListener('scroll', function () {
+      div.scrollTop > 100 ? console.log('滚动条滚了100px') : console.log('滚动条没滚')
+    })
+
+    //3.2 检测页面滚动的写法(document.documentElement.scrollTop:滚动条向下滚动时，距离顶部的距离)
+
+    window.addEventListener('scroll', function () {
+      // 打印看看 console.log(document.documentElement.scrollTop)
+
+      //判断页面滚动条滚了100px后，显示div
+      const n = document.documentElement.scrollTop
+      if (n >= 100) {
+        div.style.display = "block"
+      }
+      else {
+        div.style.display = "none"
+      }
+    })
+
+
+    //一些细节.
+    //1.document.documentElement.scrollTop。返回的是不带单位的数字。（默认单位是px）
+    //2.document.documentElement.scrollTop可 *读写*，所以赋值的时候给数字！！
+    //3.注意Body需要有高度，不然滚动条不会出现
+    //4.可以用scrollTo的方法让页面滚到指定位置。(x,y) x:水平滚动条的距离，y:垂直滚动条的距离
+    window.scrollTo(0, 0)//让页面滚到顶部
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>4. 事件委托</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    ul,
+    li {
+      list-style: none;
+    }
+
+    ul {
+      width: 100px;
+      height: 100px;
+
+    }
+  </style>
+</head>
+
+<body>
+  <ul>
+    <li>第一个孩子</li>
+    <li>第二个孩子</li>
+    <li>第三个孩子</li>
+    <li>第四个孩子</li>
+    <li>第五个孩子</li>
+    <p>我不需要变色</p>
+  </ul>
+  <script>
+    //优点：减少注册次数，可以提高程序性能
+    //原理：事件委托本质是利用事件冒泡的特点，把事件处理函数绑定到父元素上，然后通过事件冒泡机制触发子元素的事件
+
+
+    //1.获得父元素
+    const ul = document.querySelector('ul')
+    ul.addEventListener('click', function (e) {
+      // 判断事件触发的元素是否是li (注意tagName需要大写)
+      if (e.target.tagName === 'LI') {
+        // 如果事件触发的元素是li，则变色
+        e.target.style.color = 'red';
+      }
+    })
+
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>3. 解绑事件</title>
+</head>
+
+<body>
+  <button>点击</button>
+  <script>
+    const btn = document.querySelector('button')
+
+    //L0写法
+    btn.onclick = function () {
+      alert('点击事件')
+    }
+
+    btn.onclick = null
+
+    // L1写法
+    btn.addEventListener('click', function () {
+      alert('点击事件')
+    })
+    // 解绑事件
+    btn.removeEventListener('click', function () {
+      alert('点击事件')
+    })
+    //注意！⚠️ 匿名函数不能解绑 需要提前声明
+    function fn() {
+      alert('点击事件')
+    }
+    btn.addEventListener('click', fn)
+    btn.removeEventListener('click', fn)
+
+    //鼠标经过事件
+    //mouseover:鼠标经过事件 mouseout：鼠标离开事件 （但是冒泡会触发父级元素的事件）
+    //mouseenter：鼠标移入事件 mouseleave：鼠标移出事件 (不会冒泡)
+
+    // btn.addEventListener('mouseover', function () {
+    //   alert('鼠标经过事件')
+    // })
+    // btn.addEventListener('mouseout', function () {
+    //   alert('鼠标离开事件')
+    // })
+
+    //不会触发冒泡
+    btn.addEventListener('mouseenter', function () {
+      alert('鼠标移入事件')
+    })
+    btn.addEventListener('mouseleave', function () {
+      alert('鼠标移出事件')
+    })
+
+    //
+  </script>
+</body>
+
+</html>
