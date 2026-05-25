@@ -11,9 +11,11 @@
 5. [案例：Tab 栏切换](#5-案例tab-栏切换)
 6. [阻止默认行为](#6-阻止默认行为)
 7. [其他事件：加载与滚动](#7-其他事件加载与滚动)
-8. [本章 API 速查](#本章-api-速查)
-9. [易错点清单](#易错点清单)
-10. [复习问题](#复习问题)
+8. [页面尺寸事件](#8-页面尺寸事件)
+9. [案例：仿新浪固定头部](#9-案例仿新浪固定头部)
+10. [本章 API 速查](#本章-api-速查)
+11. [易错点清单](#易错点清单)
+12. [复习问题](#复习问题)
 
 ## 1. 全选复选框
 
@@ -408,6 +410,230 @@ window.scrollTo(0, 0)
 - `document.documentElement.scrollTop` 可以读，也可以写。
 - `load` 等全部资源加载完成，`DOMContentLoaded` 只等 DOM 结构加载完成。
 
+## 8. 页面尺寸事件
+
+对应文件：`7. 页面尺寸事件.html`
+
+### 学习目标
+
+掌握页面尺寸变化事件 `resize`，理解元素宽高、位置的几种常见获取方式：`clientWidth`、`clientHeight`、`offsetLeft` 和 `getBoundingClientRect()`。
+
+### 需求
+
+当浏览器窗口大小发生变化时执行代码，并能获取页面中某个元素的实际尺寸和位置，用于响应式布局、固定定位、吸顶导航、元素碰撞检测等场景。
+
+### 尺寸与位置属性对比
+
+| 属性 | 作用 | 读写情况 | 是否包含内容 | 相对谁 / 计算基准 | 常见使用场景 |
+| --- | --- | --- | --- | --- | --- |
+| `scrollLeft` / `scrollTop` | 获取元素或页面被卷去的左侧 / 头部距离 | 可读写，数字，不带 `px` | 不是尺寸属性，不涉及 `content`、`padding`、`border`、`margin` | 页面常用 `document.documentElement.scrollTop`；元素内部滚动用 `元素.scrollTop` | 判断页面滚动距离、回到顶部、滚动到某位置显示导航 |
+| `clientWidth` / `clientHeight` | 获取元素可视区域宽高 | 只读，数字，不带 `px` | 包含 `content`、`padding`；不包含 `border`、`margin`、滚动条 | 计算元素内部可视区域大小 | 获取盒子内部可用空间、响应式布局、判断内容可视范围 |
+| `offsetWidth` / `offsetHeight` | 获取元素自身盒子的实际宽高 | 只读，数字，不带 `px` | 包含 `content`、`padding`、`border`；不包含 `margin`；通常包含滚动条 | 计算元素在页面布局中实际占用的盒子尺寸 | 获取完整盒子大小、拖拽边界、碰撞检测、动画计算 |
+| `offsetLeft` / `offsetTop` | 获取元素距离定位父级左侧 / 上方的距离 | 只读，数字，不带 `px` | 不是宽高尺寸，不用判断包含哪些盒模型部分 | 相对于最近的 `offsetParent`；父级无定位时通常相对于页面或 `body` | 判断是否滚动到某模块、吸顶导航、楼层定位、获取元素位置 |
+
+快速记忆：
+
+- `scroll` 看“滚出去多少”，可读写。
+- `client` 看“盒子里面可视区域多大”，包含 `padding`，不含 `border`。
+- `offsetWidth/Height` 看“盒子整体多大”，包含 `padding` 和 `border`。
+- `offsetLeft/Top` 看“元素离定位父级多远”，常用来做滚动临界点判断。
+
+### 页面尺寸变化事件
+
+```js
+window.addEventListener('resize', function () {
+  console.log('页面尺寸变化')
+})
+```
+
+`resize` 事件绑定在 `window` 上，当浏览器窗口大小发生变化时触发。
+
+### 获取元素可视宽高
+
+```js
+const div = document.querySelector('div')
+
+console.log(div.clientWidth)
+console.log(div.clientHeight)
+```
+
+`clientWidth` 和 `clientHeight` 获取的是元素内容区域加 `padding` 的尺寸，不包含 `border`、`margin` 和滚动条。
+
+以示例中的盒子为例：
+
+```css
+div {
+  width: 200px;
+  height: 200px;
+  padding: 10px;
+}
+```
+
+此时：
+
+- `clientWidth` 结果是 `220`。
+- `clientHeight` 结果是 `220`。
+
+### 获取元素偏移位置
+
+```js
+console.log(div.offsetLeft)
+```
+
+`offsetLeft` 表示元素左边框外侧到定位父级左侧的距离。
+
+如果父级没有定位，通常相对于页面或浏览器窗口计算；如果父级有定位，则相对于最近的定位父级计算。
+
+### 获取元素尺寸和视口位置
+
+```js
+console.log(div.getBoundingClientRect())
+```
+
+`getBoundingClientRect()` 会返回一个对象，里面包含元素相对于浏览器可视区域的位置和尺寸信息。
+
+常见属性：
+
+- `left`：元素左侧距离视口左侧的距离。
+- `top`：元素顶部距离视口顶部的距离。
+- `width`：元素宽度。
+- `height`：元素高度。
+- `right`：元素右侧距离视口左侧的距离。
+- `bottom`：元素底部距离视口顶部的距离。
+
+### 使用场景
+
+- 浏览器窗口变化时重新计算布局。
+- 获取元素宽高做动画或定位。
+- 判断元素是否进入可视区域。
+- 计算固定导航栏、侧边栏、回到顶部按钮的位置。
+
+### 重点
+
+- `resize` 是窗口尺寸变化事件，通常绑定给 `window`。
+- `clientWidth` / `clientHeight` 包含 `padding`，不包含 `border` 和 `margin`。
+- `offsetLeft` / `offsetTop` 和定位父级有关。
+- `getBoundingClientRect()` 获取的是元素相对于视口的位置，会随着页面滚动而变化。
+
+### 易错点
+
+- `clientWidth`、`clientHeight`、`offsetLeft` 读取到的是数字，不带 `px`。
+- `offsetLeft` 是只读属性，不能通过它直接修改元素位置。
+- 浏览器默认会给 `body` 添加 `8px` 外边距，如果没有清除默认样式，位置计算可能会多出一段距离。
+- `getBoundingClientRect()` 返回的是对象，不是单个数字，需要通过 `.top`、`.left` 等属性读取。
+
+## 9. 案例：仿新浪固定头部
+
+对应文件：`7. X（案例）仿新浪固定头部.html`
+
+### 学习目标
+
+综合使用页面滚动事件、`scrollTop`、`offsetTop`、固定定位和样式修改，实现“滚动到指定模块后显示固定头部”的效果。
+
+### 需求
+
+页面顶部导航栏默认隐藏在浏览器上方。当用户向下滚动到“秒杀模块”所在位置时，顶部导航栏滑动显示；当用户滚动回该模块上方时，顶部导航栏重新隐藏。
+
+### 案例结构
+
+- `.header`：固定定位的顶部导航栏。
+- `.content`：页面主体内容，用较高高度制造滚动条。
+- `.sk`：秒杀模块，用它的 `offsetTop` 作为显示头部的临界点。
+- `.backtop`：回到顶部区域样式，本案例中主要作为页面结构保留。
+
+### 关键样式
+
+```css
+.header {
+  position: fixed;
+  top: -80px;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  transition: all .3s;
+}
+```
+
+核心点：
+
+- `position: fixed` 让头部固定在浏览器窗口中。
+- `top: -80px` 让头部默认向上隐藏。
+- `transition: all .3s` 让显示和隐藏有过渡动画。
+
+### 涉及语法
+
+获取元素：
+
+```js
+const sk = document.querySelector('.sk')
+const header = document.querySelector('.header')
+```
+
+监听页面滚动：
+
+```js
+window.addEventListener('scroll', function () {
+  const n = document.documentElement.scrollTop
+})
+```
+
+获取模块距离页面顶部的位置：
+
+```js
+sk.offsetTop
+```
+
+修改固定头部位置：
+
+```js
+header.style.top = 0 + 'px'
+header.style.top = -80 + 'px'
+```
+
+### 案例思路
+
+1. 获取秒杀模块 `.sk` 和头部导航 `.header`。
+2. 给 `window` 绑定 `scroll` 页面滚动事件。
+3. 使用 `document.documentElement.scrollTop` 获取页面已经向上滚动的距离。
+4. 使用 `sk.offsetTop` 获取秒杀模块距离页面顶部的距离。
+5. 如果滚动距离大于等于秒杀模块顶部距离，说明用户已经滚动到目标区域，设置 `header.style.top = '0px'` 显示头部。
+6. 否则设置 `header.style.top = '-80px'`，把头部重新隐藏到页面上方。
+
+### 关键代码
+
+```js
+window.addEventListener('scroll', function () {
+  const n = document.documentElement.scrollTop
+
+  if (n >= sk.offsetTop) {
+    header.style.top = 0 + 'px'
+  } else {
+    header.style.top = -80 + 'px'
+  }
+})
+```
+
+### 使用场景
+
+- 首页滚动后显示吸顶导航。
+- 商品详情页滚动到购买区后显示固定购买栏。
+- 页面滚动到一定位置后显示回到顶部按钮。
+- 到达某个模块后触发动画或高亮导航。
+
+### 重点
+
+- 页面滚动距离用 `document.documentElement.scrollTop` 获取。
+- 元素距离页面顶部的位置可以用 `offsetTop` 获取。
+- 判断是否显示固定头部，本质是比较“页面滚动距离”和“目标模块顶部距离”。
+- 修改 `style.top` 时必须带单位，比如 `'0px'`、`'-80px'`。
+
+### 易错点
+
+- `style.top` 是字符串样式值，不能只写数字，必须拼接或写上 `px`。
+- `offsetTop` 是元素相对于定位父级或页面的偏移位置，布局变化后数值也可能变化。
+- `.header` 的高度是 `80px`，隐藏时 `top` 要设置成 `-80px`，否则可能露出一部分。
+- 页面必须有足够高度才能触发滚动事件。
+
 ## 本章 API 速查
 
 ### DOM 获取
@@ -461,6 +687,17 @@ window.scrollTo(0, 0)
 | `element.scrollTop` | 获取或设置元素内部垂直滚动距离 |
 | `window.scrollTo(x, y)` | 滚动到指定页面位置 |
 
+### 页面尺寸与元素位置
+
+| API / 属性 | 作用 |
+| --- | --- |
+| `window.addEventListener('resize', fn)` | 浏览器窗口尺寸变化时触发 |
+| `element.clientWidth` | 获取元素内容区加 `padding` 的宽度 |
+| `element.clientHeight` | 获取元素内容区加 `padding` 的高度 |
+| `element.offsetLeft` | 获取元素相对于定位父级的左侧偏移距离 |
+| `element.offsetTop` | 获取元素相对于定位父级的顶部偏移距离 |
+| `element.getBoundingClientRect()` | 获取元素相对于视口的位置和尺寸对象 |
+
 ## 易错点清单
 
 - `addEventListener()` 默认在冒泡阶段执行。
@@ -475,6 +712,10 @@ window.scrollTo(0, 0)
 - `scrollTop` 返回数字，不带 `px` 单位。
 - 页面滚动事件要生效，页面本身需要有足够高度。
 - 元素滚动事件要生效，元素需要能产生内部滚动。
+- `clientWidth` / `clientHeight` 包含 `padding`，不包含 `border` 和 `margin`。
+- `offsetTop` / `offsetLeft` 和定位父级有关，读取到的是数字。
+- 修改 `style.top`、`style.left` 等样式位置时必须带单位。
+- `getBoundingClientRect()` 获取的是相对于视口的位置，滚动页面后结果可能变化。
 
 ## 复习问题
 
@@ -492,13 +733,17 @@ window.scrollTo(0, 0)
 12. `load` 和 `DOMContentLoaded` 哪个触发更早？为什么？
 13. 页面滚动距离应该通过哪个属性读取？
 14. `scrollTo(0, 0)` 的作用是什么？
+15. `resize` 事件通常绑定在哪个对象上？
+16. `clientWidth` 包含 `padding` 吗？包含 `border` 吗？
+17. `offsetTop` 在仿新浪固定头部案例中起什么作用？
+18. 为什么修改 `header.style.top` 时要加 `px` 单位？
 
 ## 本章学习主线
 
 本章可以按照这条线来理解：
 
 ```text
-事件监听 -> 事件流 -> 事件解绑 -> 事件委托 -> 默认行为 -> 加载和滚动事件
+事件监听 -> 事件流 -> 事件解绑 -> 事件委托 -> 默认行为 -> 加载和滚动事件 -> 页面尺寸和位置
 ```
 
-先学会给元素绑定事件，再理解事件为什么会影响父子元素；接着学习如何解绑事件、如何借助冒泡做事件委托；最后补充实际开发中常见的表单提交、页面加载和页面滚动处理。
+先学会给元素绑定事件，再理解事件为什么会影响父子元素；接着学习如何解绑事件、如何借助冒泡做事件委托；最后补充实际开发中常见的表单提交、页面加载、页面滚动、尺寸变化和元素位置计算。

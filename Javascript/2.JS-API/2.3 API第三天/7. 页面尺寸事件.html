@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>7. 页面尺寸事件</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    div {
+      width: 200px;
+      height: 200px;
+      padding: 10px;
+      margin: 100px;
+      background-color: pink;
+    }
+  </style>
+</head>
+
+<body>
+  <div></div>
+  <script>
+    //1.页面尺寸事件
+    window.addEventListener('resize', function () {
+      console.log('页面尺寸变化')
+    })
+    // 2.获取元素宽高 
+    const div = document.querySelector('div')
+    console.log(div.clientWidth)//包含padding，不包含border
+    console.log(div.clientHeight)//包含padding，不包含border
+
+    //3.获得元素大小和位置offset，包含padding和border
+    //注意：当父亲有定位的时候的，offset获取的是相对父级元素的距离，没有父级元素时，相对于浏览器窗口
+    console.log(div.offsetLeft)//包含padding和border，并且只读。结果是数字108，因为会默认给body添加8px的外边距
+
+    //4.获取元素大小和相对于视口的位置
+    console.log(div.getBoundingClientRect())
+    //会得到一个对象，包含left,top,width,height等属性
+
+    
+  </script>
+</body>
+
+</html>
