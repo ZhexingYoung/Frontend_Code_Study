@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>5.复制+删除节点</title>
+</head>
+
+<body>
+  <ul>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+    <li>需要删除的节点</li>
+  </ul>
+  <script>
+    // 克隆一个节点： 节点.cloneNode(true/false): true代表克隆节点and他的子节点，false表示只有他的标签本身，（）空的时候为false
+    const ul = document.querySelector('ul')
+    const li1 = ul.children[0].cloneNode(true)
+    ul.appendChild(li1)
+
+    //删除一个节点：删除一个节点需要从父元素开始删除：  父元素.removeChild(要删除的元素) 
+    ul.removeChild(ul.children[5])
+  </script>
+</body>
+
+</html>

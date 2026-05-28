@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./index.css">
+</head>
+
+<body>
+  <h1>新增学员</h1>
+  <form class="info" autocomplete="off">
+    姓名: <input type="text" class="userName" name="userName" />
+    年龄: <input type="text" class="userAge" name="userAge" />
+    性别: <select class="gender" name="gender">
+      <option value="男">男</option>
+      <option value="女">女</option>
+    </select>
+    薪资: <input type="text" class="salary" name="salary" />
+    就业城市: <select name="city" class="city">
+      <option value="北京">北京</option>
+      <option value="上海">上海</option>
+      <option value="广州">广州</option>
+      <option value="深圳">深圳</option>
+      <option value="曹县">曹县</option>
+    </select>
+    <button class="add">录入</button>
+    <!-- 这里button的本质是button type = “submit” 只不过省略了 -->
+  </form>
+  <h1>就业榜</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>学号</th>
+        <th>姓名</th>
+        <th>年龄</th>
+        <th>性别</th>
+        <th>薪资</th>
+        <th>就业城市</th>
+        <th>操作</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr> -->
+    </tbody>
+  </table>
+
+</body>
+
+<script>
+  //1. 初始化数组和获取元素
+  //获取元素
+  const userName = document.querySelector('.userName')
+  const userAge = document.querySelector('.userAge')
+  const userGender = document.querySelector('.gender')
+  const userSalary = document.querySelector('.salary')
+  const userCity = document.querySelector('.city')
+  //声明数组
+  const initdata = []
+  const tb = document.querySelector('tbody')
+
+  //2.表单行为控制
+  //按钮行为
+  const info = document.querySelector('.info')
+  //inform表单标签自带提交属性
+  info.addEventListener('submit', function (e) {
+    e.preventDefault()
+    // 阻止默认行为
+
+    //2.X  验证表单非空，如同不通过，中断
+    //获取所有带有name属性的
+    const item = document.querySelectorAll('[name]')
+
+    //验证所有表单非空，如同不通过，中断
+    for (let i = 0; i < item.length; i++) {
+      if (item[i].value === '') {
+        alert('输入内容不能为空')
+        return
+      }
+    }
+
+    //创建新的对象
+    const obj = {
+      stuId: initdata.length + 1,
+      userName: userName.value,
+      userAge: userAge.value,
+      userGender: userGender.value,
+      userSalary: userSalary.value,
+      userCity: userCity.value
+    }
+    //添加到数组里
+    initdata.push(obj)
+    console.log(initdata)
+
+    //重置表单
+    this.reset()
+
+    //调用分装函数
+    render()
+  })
+
+
+  //3.封装渲染函数
+  function render() {
+    //先清空tb
+    tb.innerHTML = ''
+    for (let i = 0; i < initdata.length; i++) {
+      //生成tr
+      const tr = document.createElement('tr')
+      tr.innerHTML = `  <tr>
+        <td>${initdata[i].stuId}</td>
+        <td>${initdata[i].userName}</td>
+        <td>${initdata[i].userAge}</td>
+        <td>${initdata[i].userGender}</td>
+        <td>${initdata[i].userSalary}</td>
+        <td>${initdata[i].userCity}</td>
+        <td>
+          <a href:"javascript:" data-id=${i}>删除</a> 
+        </td>
+      </tr> `
+
+      //追加元素
+      tb.appendChild(tr)
+    }
+  }
+
+  //4.删除操作
+  //删除事件委托给a链接
+  tb.addEventListener('click', function (e) {
+    if (e.target.tagName === "A") {
+      e.preventDefault()
+      console.log(e.target.dataset.id)
+      initdata.splice(+e.target.dataset.id, 1)
+      //e.target.dataset.id 传递的是字符串，但是可以自动转换成数字，最好手动转换
+
+      //重新渲染一次
+      render()
+    }
+  })
+
+</script>
+
+</html>

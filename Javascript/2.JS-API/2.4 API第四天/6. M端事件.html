@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>6.M端事件</title>
+  <style>
+    div {
+      width: 200px;
+      height: 200px;
+      background-color: pink;
+    }
+  </style>
+</head>
+
+<body>
+  <div>
+  </div>
+  <script>
+    //触屏事件：
+    const div = document.querySelector('div')
+    div.addEventListener('touchstart', function () {
+      console.log('开始摸')
+    })
+    div.addEventListener('touchend', function () {
+      console.log('结束摸')
+    })
+    div.addEventListener('touchmove', function () {
+      console.log('移动摸')
+    })
+  </script>
+</body>
+
+</html>

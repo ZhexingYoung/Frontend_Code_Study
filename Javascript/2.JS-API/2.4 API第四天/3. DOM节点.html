@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>3.DOM节点</title>
+  <style>
+    .box {
+      position: relative;
+      width: 1000px;
+      height: 200px;
+      background-color: pink;
+      margin: 100px auto;
+      text-align: center;
+      font-size: 50px;
+      line-height: 200px;
+      font-weight: 700;
+    }
+
+    .box1 {
+      position: absolute;
+      right: 20px;
+      top: 10px;
+      width: 20px;
+      height: 20px;
+      background-color: skyblue;
+      text-align: center;
+      line-height: 20px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+  <div>
+    <ul>
+      <li>1
+        <p></p>
+      </li>
+      <li>2</li>
+      <li>3</li>
+      <li>4</li>
+      <li>5</li>
+    </ul>
+  </div>
+  <div>
+    <div class="box">
+      我是广告
+      <div class="box1">X</div>
+    </div>
+    <div class="box">
+      我是广告
+      <div class="box1">X</div>
+    </div>
+    <div class="box">
+      我是广告
+      <div class="box1">X</div>
+    </div>
+
+    <div class="grandfather">
+      <div class="dad">
+        <div class="baby">
+          <span class="son">我是儿子</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+<script>
+  // DOM树的每一个内容都是节点：元素节点，属性节点（id，class等），文本节点（文字），注释节点
+  // 元素节点：<div>、<span>、<p>、<a>、<img>等
+  // 属性节点：id、class、src、href等
+  // 文本节点：文字内容
+  // 注释节点：<!-- 注释内容 -->
+
+  // 获取DOM节点
+  //1.查找节点:
+  //1.1 父节点查找: 子元素.parentNode
+  const baby = document.querySelector('.baby');
+  console.log(baby.parentNode);
+  console.log(baby.parentNode.parentNode);
+
+  //练习案例：
+  const closeBtn = document.querySelectorAll('.box1')
+  for (let i = 0; i < closeBtn.length; i++) {
+    closeBtn[i].addEventListener('click', function () {
+      this.parentNode.style.display = 'none'
+    })
+  }
+  //1.2 childNodes获得所有的子节点: children：获得所有的元素子节点：父元素.children 返回一个伪数组，选择亲儿子
+  const ul = document.querySelector('ul')
+  console.log(ul.children);
+
+  // 1.3 兄弟关系查找
+  const li2 = document.querySelector('ul li:nth-child(2)')
+  console.log(li2.previousElementSibling); //上一个兄弟元素
+  console.log(li2.nextElementSibling); //下一个兄弟元素
+</script>
+
+</html>
