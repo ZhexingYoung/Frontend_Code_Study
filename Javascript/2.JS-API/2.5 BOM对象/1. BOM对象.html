@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BOM对象</title>
+</head>
+
+<body>
+  <div></div>
+  <script>
+    //BOM全称Browser Object Model，浏览器对象模型
+    //BOM主要操作浏览器窗口，比如弹窗，定时器，导航，前进，后退，刷新，关闭等。
+    //BOM对象：window（最大的对象，全局对象），document，location，history，screen，navigator
+    //window对象：window对象是浏览器窗口的顶级对象，代表浏览器窗口，是JavaScript的顶级对象。
+    //location对象：location对象是浏览器地址栏的URL信息，代表浏览器地址栏的URL信息，是JavaScript的顶级对象。
+    //history对象：history对象是浏览器历史记录的栈，代表浏览器历史记录的栈，是JavaScript的顶级对象。
+    //screen对象：screen对象是浏览器屏幕的信息，代表浏览器屏幕的信息，是JavaScript的顶级对象。
+    //navigator对象：navigator对象是浏览器导航的信息，代表浏览器导航的信息，是JavaScript的顶级对象。
+
+    document.querySelector('div')
+    //本质上也可以写成：window.document.querySelector('div')，但是不推荐
+
+
+    //1.定时器（延时函数）
+    //1.1 延时函数 在1000ms后执行一次
+    let timeout = setTimeout(function () {
+      console.log('延时函数')
+    }, 1000)
+
+    //清除延时函数
+    clearTimeout(timeout)
+
+    //1.2 间歇函数
+    setInterval(function () {
+      console.log('间歇函数')
+    }, 1000)
+  </script>
+</body>
+
+</html>

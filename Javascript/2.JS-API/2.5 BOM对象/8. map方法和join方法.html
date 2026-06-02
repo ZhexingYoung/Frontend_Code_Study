@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>map方法和join方法</title>
+</head>
+
+<body>
+  <Script>
+    //1.数组map方法，遍历数组中的每个元素，并返回新的数组,主要用于处理数据
+    const arr = ['red', 'green', 'blue', 'yellow', 'pink']
+    const newArr = arr.map(function (ele, index) {
+      console.log(ele) //遍历数组中的每个元素
+      console.log(index) //遍历数组中的每个索引
+      return ele + '颜色' //返回新的数组
+    })
+    console.log(newArr)//['red颜色', 'green颜色', 'blue颜色', 'yellow颜色', 'pink颜色']
+
+    //2.数组join方法，把数组转换成字符串
+    console.log(newArr.join())// 为空时，以逗号间隔，red颜色,green颜色,blue颜色,yellow颜色,pink颜色
+    console.log(newArr.join('-'))//red颜色-green颜色-blue颜色-yellow颜色-pink颜色
+    console.log(newArr.join(''))//为空字符是没有间隔，red颜色green颜色blue颜色yellow颜色pink颜色
+    console.log(newArr.join('|'))//red颜色|green颜色|blue颜色|yellow颜色|pink颜色
+
+
+  </Script>
+</body>
+
+</html>

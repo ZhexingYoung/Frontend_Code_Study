@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JS执行机制</title>
+</head>
+
+<body>
+  <script>
+    //JS执行机制
+    //1. 单线程，所有任务需要排队，前一个任务执行完毕，才能执行后一个任务。如果JS执行时间过长，这样就会导致页面渲染不连贯，加载阻塞。遇到耗时的（类似定时器等），会挂起，不阻塞后面js的执行。
+    //2. 同步任务：在主线程上排队执行的任务，只有前一个任务执行完毕，才能执行后一个任务。
+    //3. 异步任务：不进入主线程、而进入"任务队列"（task queue）的任务，只有"任务队列"通知主线程，某个异步任务可以执行了，该任务才会进入主线程执行。比如：click，resize，资源加载load，error，abort，timeout等。异步任务相关回调函数添加到任务队列中（任务队列也称为消息队列）
+    //4.事件循环 Event loop：主线程从"任务队列"中读取事件，这个过程是循环不断的，所以整个的这种运行机制又称为Event Loop（事件循环）。 
+
+  </script>
+</body>
+
+</html>

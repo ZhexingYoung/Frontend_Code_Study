@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>本地存储的复杂数据类型</title>
+</head>
+
+<body>
+  <script>
+    //本地存储的复杂数据类型是浏览器存储数据的一种方式，localStorage是本地存储的顶级对象。存储与浏览器中的键值对，以字符串的形式存储，但是没办法直接存储对象，需要转换为字符串。
+    console.log(localStorage);
+
+    //localStorage对象的常用方法：JSON.stringify() 将对象转换为字符串
+    //1.setItem(key, value) 设置存储数据
+    localStorage.setItem('obj', JSON.stringify({ name: '张三', age: 18 }));
+    //这种属于json对象 属性和值都是字符串，并且是双引号。
+
+    //2.getItem(key) 获取存储数据：JSON.parse() 将字符串转换为对象
+    console.log(localStorage.getItem('obj'));
+    console.log(JSON.parse(localStorage.getItem('obj')));
+
+  </script>
+</body>
+
+</html>

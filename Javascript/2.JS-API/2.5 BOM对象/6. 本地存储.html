@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>本地存储</title>
+</head>
+
+<body>
+  <script>
+    //本地存储是浏览器存储数据的一种方式，localStorage是本地存储的顶级对象。存储与浏览器中的键值对，以字符串的形式存储。 页面刷新不丢失。 在调试台的application中查看
+
+    //1.localStorage 可以永久存储在本地，除非手动删除，否则关闭页面也会存在。（但是不能跨域）
+    //可以多页面共享（同一浏览器下的不同页面），以键值对的形式存储。以字符串的形式存储。
+    console.log(localStorage);
+
+    //localStorage对象的常用方法：
+    //1.setItem(key, value) 设置存储数据
+    localStorage.setItem('name', '张三')
+
+    //2.getItem(key) 获取存储数据
+    console.log(localStorage.getItem('name'));
+
+    //3.removeItem(key) 删除存储数据
+    localStorage.removeItem('name')
+
+    //4.clear() 清空存储数据
+    localStorage.clear()
+
+    //sessionStorage 是会话存储的顶级对象。存储与浏览器中的键值对，以字符串的形式存储。 页面刷新会丢失。 在调试台的application中查看，但是会话存储会话结束（关闭页面）后会丢失。
+    //语法与localStorage相同，只是sessionStorage会话结束（关闭页面）后会丢失。
+    sessionStorage.setItem('name', '张三')
+    console.log(sessionStorage.getItem('name'));
+    sessionStorage.removeItem('name')
+    sessionStorage.clear()
+
+
+  </script>
+</body>
+
+</html>

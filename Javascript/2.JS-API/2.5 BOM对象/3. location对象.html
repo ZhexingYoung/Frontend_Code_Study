@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>location对象</title>
+  <style>
+    span {
+      color: red;
+    }
+  </style>
+</head>
+
+<body>
+
+</body>
+<div>
+  <a href="https://www.baidu.com">将在<span>5</span>秒钟后跳转到百度</a>
+  <a href="#anchor">锚点链接</a>
+  <a href="?name=张三&age=18">查询参数链接</a>
+  <a href="#anchor?name=张三&age=18">查询参数锚点链接</a>
+</div>
+<script>
+  //location对象是浏览器地址栏的URL信息，代表浏览器地址栏的URL信息，是JavaScript的顶级对象。
+  console.log(location);
+  //location对象的常用方法：
+  //1.href 经常用href 利用js的方法跳转页面
+  // location.href = 'https://www.baidu.com'
+
+
+  //练习案例
+
+  let i = 5
+  const span = document.querySelector('span')
+  // let timer = setInterval(fn, 1000)
+
+  function fn() {
+    i--
+    span.innerHTML = i
+    if (i === 0) {
+      clearInterval(timer)
+      span.innerHTML = 0
+      location.href = 'https://www.baidu.com'
+    }
+  }
+
+  //2.搜索参数
+  //location.search 获取URL中的查询字符串，返回一个字符串，
+  console.log(location.search)
+
+  //3.哈希参数
+  //location.hash 获取URL中的哈希值，返回一个字符串
+  console.log(location.hash)
+
+  //4.方法：reload() 重新加载页面
+  location.reload()
+  //如果参数为true，则强制从服务器重新加载 相当于ctrl+f5
+
+  //5.方法：assign() 加载新的文档
+  location.assign('https://www.baidu.com')
+
+  //6.方法：replace() 用新的文档替换当前文档
+  location.replace('https://www.baidu.com')
+
+  //7.方法：back() 后退
+  location.back()
+
+  //8.方法：forward() 前进
+  location.forward()
+
+</script>
+
+</html>
